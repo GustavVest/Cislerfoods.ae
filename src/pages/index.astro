@@ -3,7 +3,6 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import RopeDivider from "../components/RopeDivider.astro";
-import WorldMap from "../components/WorldMap.astro";
 import logo from "../assets/images/logo.png";
 import catchAssortment from "../assets/images/catch-assortment.jpg";
 import seaUrchinPlated from "../assets/images/sea-urchin-plated.jpg";
@@ -138,14 +137,6 @@ const products: Product[] = [
     categories: ["frozen"],
     forms: ["Frozen", "Whole"],
     blurb: "A northern staple, frozen whole for processing, curing or retail.",
-    icon: "lucide:fish",
-  },
-  {
-    name: "Marcell Fish",
-    categories: ["frozen"],
-    forms: ["Frozen"],
-    blurb:
-      "A specialist frozen catch supplied on request — ask our trade desk for current availability.",
     icon: "lucide:fish",
   },
   {
@@ -326,13 +317,9 @@ const navLinks = [
           class="flex items-center justify-center gap-4 md:gap-8 mb-8 animate-fade-up"
           style="animation-delay: 0.35s"
         >
-          <RopeDivider
-            class="hidden sm:block w-16 md:w-24 h-4 text-teal-300/70"
-          />
+          <RopeDivider class="hidden sm:block w-24 md:w-40 h-[14px]" />
           <span class="kicker text-xs text-navy-300">Est. Trading House</span>
-          <RopeDivider
-            class="hidden sm:block w-16 md:w-24 h-4 text-teal-300/70"
-          />
+          <RopeDivider class="hidden sm:block w-24 md:w-40 h-[14px]" />
         </div>
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
@@ -353,6 +340,8 @@ const navLinks = [
         </div>
       </div>
     </section>
+
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
 
     <!-- About / Heritage -->
     <section id="about" class="py-28 md:py-36 relative">
@@ -386,7 +375,7 @@ const navLinks = [
               class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-navy-900/15"
             >
               <div>
-                <p class="font-display text-3xl text-navy-900">16</p>
+                <p class="font-display text-3xl text-navy-900">15</p>
                 <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
               </div>
               <div>
@@ -411,6 +400,8 @@ const navLinks = [
       </div>
     </section>
 
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+
     <!-- Products -->
     <section
       id="products"
@@ -422,7 +413,7 @@ const navLinks = [
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
-            Sixteen Products, One Origin: Norway
+            Fifteen Products, One Origin: Norway
           </h2>
           <p class="text-navy-700 leading-relaxed">
             Every item in our catalogue is sourced from Norwegian waters and
@@ -501,6 +492,8 @@ const navLinks = [
         </div>
       </div>
     </section>
+
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
 
     <!-- Origin & Handling -->
     <section id="origin" class="py-28 md:py-36 relative">
@@ -627,6 +620,8 @@ const navLinks = [
       </div>
     </section>
 
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+
     <!-- Export Markets -->
     <section
       id="markets"
@@ -641,7 +636,6 @@ const navLinks = [
       <div class="absolute inset-0 bg-navy-900/90"></div>
       <div class="max-w-7xl mx-auto px-6 relative">
         <div class="max-w-2xl mb-20 reveal">
-          <RopeDivider class="w-20 h-4 text-teal-300/70 mb-6" />
           <p class="kicker text-sm text-navy-400 mb-5">Where We Trade</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
@@ -655,10 +649,110 @@ const navLinks = [
           </p>
         </div>
 
-        <div
-          class="reveal mb-20 border border-navy-700/50 bg-navy-950/30 p-4 md:p-8"
-        >
-          <WorldMap />
+        <div class="reveal mb-20">
+          <svg
+            viewBox="0 0 900 220"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Trade route diagram: Norway and Europe to Dubai headquarters, exporting to the Middle East, China and Japan"
+          >
+            <line
+              x1="90"
+              y1="110"
+              x2="430"
+              y2="110"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="45"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="110"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="175"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+
+            <circle cx="60" cy="110" r="5" fill="#f2ece0"></circle>
+            <text
+              x="60"
+              y="145"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">NORWAY</text
+            >
+            <text
+              x="60"
+              y="163"
+              fill="#86988F"
+              font-size="11"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">& EUROPE</text
+            >
+
+            <circle cx="450" cy="110" r="7" fill="#f2ece0"></circle>
+            <text
+              x="450"
+              y="90"
+              fill="#f2ece0"
+              font-size="14"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">DUBAI HQ</text
+            >
+
+            <circle cx="650" cy="45" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="49"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">MIDDLE EAST</text
+            >
+
+            <circle cx="650" cy="110" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="114"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">CHINA</text
+            >
+
+            <circle cx="650" cy="175" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="179"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">JAPAN</text
+            >
+          </svg>
         </div>
 
         <div class="grid md:grid-cols-3 gap-px bg-navy-700/50 reveal">
@@ -690,11 +784,12 @@ const navLinks = [
       </div>
     </section>
 
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+
     <!-- Quality & Credibility -->
     <section class="py-28 md:py-36 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mb-16 reveal">
-          <RopeDivider class="w-20 h-4 text-navy-400 mb-6" />
           <p class="kicker text-sm text-navy-500 mb-5">Why Cisler Foods</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
@@ -761,6 +856,8 @@ const navLinks = [
         </div>
       </div>
     </section>
+
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
 
     <!-- Contact / RFQ -->
     <section
@@ -930,12 +1027,11 @@ const navLinks = [
       </div>
     </section>
 
+    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+
     <!-- Footer -->
     <footer class="bg-navy-900 text-navy-300 py-16">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="flex justify-center mb-10">
-          <RopeDivider class="w-28 h-4 text-teal-300/60" />
-        </div>
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
         >

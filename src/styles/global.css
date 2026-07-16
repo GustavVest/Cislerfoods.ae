@@ -13,15 +13,15 @@
   --color-navy-600: #3a616d;
   --color-navy-500: #5f7c7d;
   --color-navy-400: #86988f;
-  --color-navy-300: #a8b6ae;
-  --color-navy-200: #c9d2c9;
-  --color-navy-100: #e4e8e2;
+  --color-navy-300: #9daaa2;
+  --color-navy-200: #bcc6bc;
+  --color-navy-100: #d8ddd4;
 
-  /* Paper — the catalog surface, never stark white */
-  --color-paper-100: #f8f4ec;
-  --color-paper-200: #f2ece0;
-  --color-paper-300: #e8dfcc;
-  --color-paper-400: #d8ccb2;
+  /* Paper — the catalog surface, never stark white, dimmed for the eye */
+  --color-paper-100: #ece5d4;
+  --color-paper-200: #e6decb;
+  --color-paper-300: #dbd0b8;
+  --color-paper-400: #cabd9f;
 
   /* Category-tag accent only — never a dominant color */
   --color-plum-400: #8a7391;
@@ -64,16 +64,27 @@ html {
   background-image:
     radial-gradient(
       circle at 15% 20%,
-      rgba(21, 56, 71, 0.06) 0,
+      rgba(21, 56, 71, 0.07) 0,
       transparent 50%
     ),
     radial-gradient(
       circle at 85% 75%,
-      rgba(21, 56, 71, 0.055) 0,
+      rgba(21, 56, 71, 0.065) 0,
       transparent 55%
     ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.85' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='2.1' intercept='-0.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.11'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.85' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='2.4' intercept='-0.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.17'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='0.08'/%3E%3C/svg%3E");
   background-attachment: fixed;
+}
+
+/* 1:1 recreation of the reference rope border: three double-rules,
+   two hatch rows leaning / then \, long/short dashes, khaki #b7b09a */
+.rope-border {
+  background-origin: content-box;
+  background-clip: content-box;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23b7b09a'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23b7b09a'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
 }
 
 .kicker {
