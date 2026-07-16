@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Navy scale — anchored on the logo's Deep Northern Navy / Maritime Blue */
+  --color-navy-950: #0a1e26;
+  --color-navy-900: #153847;
+  --color-navy-800: #1d4552;
+  --color-navy-700: #284c58;
+  --color-navy-600: #3a616d;
+  --color-navy-500: #5f7c7d;
+  --color-navy-400: #86988f;
+  --color-navy-300: #a8b6ae;
+  --color-navy-200: #c9d2c9;
+  --color-navy-100: #e4e8e2;
+
+  /* Paper — the catalog surface, never stark white */
+  --color-paper-100: #f8f4ec;
+  --color-paper-200: #f2ece0;
+  --color-paper-300: #e8dfcc;
+  --color-paper-400: #d8ccb2;
+
+  /* Category-tag accent only — never a dominant color */
+  --color-plum-400: #8a7391;
+  --color-plum-500: #6f5a72;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1.2s ease-out both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(21, 56, 71, 0.035) 0,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(21, 56, 71, 0.03) 0,
+      transparent 50%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+.kicker {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.tabular-figures {
+  font-variant-numeric: tabular-nums;
+}

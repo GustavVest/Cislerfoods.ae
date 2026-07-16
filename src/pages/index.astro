@@ -1,0 +1,1107 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import logo from "../assets/images/logo.jpg";
+import catchAssortment from "../assets/images/catch-assortment.jpg";
+import seaUrchinPlated from "../assets/images/sea-urchin-plated.jpg";
+import kingCrab from "../assets/images/king-crab.png";
+import oysterShoreline from "../assets/images/oyster-shoreline.png";
+import fjordOrigin from "../assets/images/fjord-origin.jpg";
+
+const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
+
+type Category = "fresh" | "frozen" | "premium";
+
+interface Product {
+  name: string;
+  categories: Category[];
+  forms: string[];
+  blurb: string;
+  image?: ImageMetadata;
+  icon: string;
+}
+
+const products: Product[] = [
+  {
+    name: "Atlantic Salmon",
+    categories: ["fresh", "frozen", "premium"],
+    forms: ["Fresh", "Frozen", "Whole", "Fillet", "Smoked"],
+    blurb:
+      "Fjord-raised, prized for its rich marbling and clean, buttery flavour — our highest-volume export.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Norwegian Trout",
+    categories: ["fresh", "frozen"],
+    forms: ["Fresh", "Frozen", "Whole", "Fillet"],
+    blurb:
+      "A leaner, more delicate cousin to salmon, favoured across Middle Eastern and Asian kitchens alike.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Norwegian King Crab",
+    categories: ["fresh", "frozen", "premium"],
+    forms: ["Live", "Frozen", "King Crab Legs (Frozen)"],
+    blurb:
+      "The Barents Sea's giant — sweet, dense meat landed live and moved fast.",
+    image: kingCrab,
+    icon: "lucide:shell",
+  },
+  {
+    name: "Norwegian Snow Crab",
+    categories: ["frozen"],
+    forms: ["Frozen", "Snow Crab Legs", "Clusters"],
+    blurb:
+      "Slender legs and delicate, brine-sweet meat, supplied frozen at scale for foodservice and retail.",
+    icon: "lucide:shell",
+  },
+  {
+    name: "Norwegian Langoustine",
+    categories: ["fresh", "frozen"],
+    forms: ["Fresh", "Frozen"],
+    blurb:
+      "Cold-water langoustine with delicate, almost sweet flesh — sold fresh or snap-frozen at peak condition.",
+    icon: "lucide:shrimp",
+  },
+  {
+    name: "Scallops",
+    categories: ["frozen"],
+    forms: ["Live", "Frozen"],
+    blurb:
+      "Hand-selected, live or individually frozen, prized for their clean sweetness.",
+    icon: "lucide:shell",
+  },
+  {
+    name: "Oysters",
+    categories: ["fresh", "premium"],
+    forms: ["Live"],
+    blurb:
+      "Live Norwegian oysters, harvested to order and shipped within their natural cycle.",
+    image: oysterShoreline,
+    icon: "lucide:shell",
+  },
+  {
+    name: "Green Sea Urchins",
+    categories: ["fresh", "premium"],
+    forms: ["Live", "Frozen"],
+    blurb:
+      "Uni at its most vivid — live or frozen roe from cold, clean northern waters.",
+    image: seaUrchinPlated,
+    icon: "lucide:sun",
+  },
+  {
+    name: "Sushi Grade Virgin Herring",
+    categories: ["premium"],
+    forms: ["Frozen"],
+    blurb:
+      "Frozen to sushi-grade specification — a specialist cut for discerning kitchens.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Atlantic Cod",
+    categories: ["fresh", "frozen"],
+    forms: ["Fresh", "Frozen", "Fillet", "Whole"],
+    blurb:
+      "The benchmark whitefish — firm, flaky, and available fresh, frozen, whole or filleted.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Halibut",
+    categories: ["fresh", "frozen"],
+    forms: ["Fresh", "Frozen", "Fillet"],
+    blurb:
+      "A premium flatfish with dense, ivory flesh — fresh, frozen or filleted to order.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Mackerel",
+    categories: ["frozen"],
+    forms: ["Frozen", "Whole"],
+    blurb: "Fast-moving pelagic fish, frozen whole at peak fat content.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Herring",
+    categories: ["frozen"],
+    forms: ["Frozen", "Whole"],
+    blurb: "A northern staple, frozen whole for processing, curing or retail.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Marcell Fish",
+    categories: ["frozen"],
+    forms: ["Frozen"],
+    blurb:
+      "A specialist frozen catch supplied on request — ask our trade desk for current availability.",
+    icon: "lucide:fish",
+  },
+  {
+    name: "Bottarga Caviar (Ling)",
+    categories: ["premium"],
+    forms: ["Premium Bottarga"],
+    blurb:
+      "Cured, pressed ling roe — a Mediterranean technique applied to northern fish.",
+    icon: "lucide:package",
+  },
+  {
+    name: "Bottarga Caviar (Spotted Wolffish)",
+    categories: ["premium"],
+    forms: ["Premium Bottarga"],
+    blurb:
+      "A rarer bottarga, cured from spotted wolffish roe for connoisseur accounts.",
+    icon: "lucide:package",
+  },
+];
+
+const filters: { key: "all" | Category; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "fresh", label: "Fresh Seafood" },
+  { key: "frozen", label: "Frozen Seafood" },
+  { key: "premium", label: "Premium & Gourmet" },
+];
+
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#products", label: "Products" },
+  { href: "#origin", label: "Origin" },
+  { href: "#markets", label: "Export Markets" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cisler Foods — a Dubai-headquartered northern seafood trading house, sourcing Norwegian salmon, king crab, langoustine and more through exclusive producer agreements, exporting across the Middle East, China and Japan."
+    />
+    <meta
+      property="og:title"
+      content="Cisler Foods — Northern Seafood Trading House"
+    />
+    <meta
+      property="og:description"
+      content="Norwegian seafood, sourced through exclusive producer agreements, traded end-to-end from our Dubai headquarters to the Middle East, China and Japan."
+    />
+    <meta property="og:image" content="https://cislerfoods.ae/og-image.jpg" />
+    <meta property="og:url" content="https://cislerfoods.ae" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cisler Foods — Northern Seafood Trading House</title>
+    {
+      umamiId && (
+        <script
+          is:inline
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id={umamiId}
+          data-domains="cislerfoods.ae,www.cislerfoods.ae"
+        />
+      )
+    }
+  </head>
+
+  <body class="bg-paper-200 text-navy-900 font-body antialiased paper-texture">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-navy-900 border-b border-navy-700/50"
+      id="nav"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="block w-14 shrink-0">
+          <Image
+            src={logo}
+            alt="Cisler Foods"
+            class="w-full h-auto rounded-sm"
+          />
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-sm kicker text-paper-200/80 hover:text-paper-100 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+        <a
+          href="#contact"
+          class="hidden md:inline-block border border-paper-100/40 text-paper-100 text-sm kicker px-5 py-2.5 hover:bg-paper-100 hover:text-navy-900 transition-colors"
+        >
+          Request Quote
+        </a>
+        <button
+          id="menu-toggle"
+          class="md:hidden text-paper-100"
+          aria-label="Toggle menu"
+        >
+          <Icon name="lucide:menu" class="w-7 h-7" id="menu-icon-open" />
+          <Icon name="lucide:x" class="w-7 h-7 hidden" id="menu-icon-close" />
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-navy-900 border-t border-navy-700/50 px-6 py-6 flex flex-col gap-5"
+      >
+        {
+          navLinks.map((link) => (
+            <a href={link.href} class="text-sm kicker text-paper-200/80">
+              {link.label}
+            </a>
+          ))
+        }
+        <a href="#contact" class="text-sm kicker text-paper-100 mt-2">
+          Request Quote →
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="relative bg-navy-900 text-paper-100 pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(95,124,125,0.18),transparent_55%)]"
+      >
+      </div>
+      <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <Image
+          src={logo}
+          alt=""
+          class="w-40 md:w-48 mx-auto mb-10 rounded-sm animate-fade-up"
+        />
+        <p
+          class="kicker text-sm text-navy-300 mb-6 animate-fade-up"
+          style="animation-delay: 0.1s"
+        >
+          Northern Seafood Trading House — Dubai
+        </p>
+        <h1
+          class="font-display text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-8 animate-fade-up"
+          style="animation-delay: 0.2s"
+        >
+          Norwegian Seafood,<br />
+          <em class="italic text-navy-200">Traded Without Compromise</em>
+        </h1>
+        <p
+          class="text-lg text-navy-200 max-w-2xl mx-auto mb-12 animate-fade-up"
+          style="animation-delay: 0.3s"
+        >
+          Cisler Foods sources Atlantic salmon, king crab, langoustine and more
+          directly from exclusive Norwegian producers and fisheries — delivering
+          world-class northern seafood to the Middle East, China and Japan, end
+          to end, without intermediaries.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+          style="animation-delay: 0.4s"
+        >
+          <a
+            href="#products"
+            class="bg-paper-100 text-navy-900 kicker text-sm px-8 py-4 hover:bg-white transition-colors"
+          >
+            View Catalogue
+          </a>
+          <a
+            href="#contact"
+            class="border border-paper-100/40 text-paper-100 kicker text-sm px-8 py-4 hover:bg-paper-100/10 transition-colors"
+          >
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Heritage -->
+    <section id="about" class="py-28 md:py-36 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <p class="kicker text-sm text-navy-500 mb-5">The Trading House</p>
+            <h2
+              class="font-display text-3xl md:text-5xl font-light leading-tight mb-8"
+            >
+              Built on Northern Waters,<br /> Built for Modern Trade
+            </h2>
+            <p class="text-navy-700 leading-relaxed mb-5">
+              Cisler Foods began with a simple conviction: that the finest
+              seafood in northern Europe deserves a more direct route to the
+              tables that value it. From our headquarters in Dubai, we connect
+              exclusive Norwegian producers and fisheries directly to importers,
+              distributors and foodservice operators across the Middle East,
+              China and Japan — with no layer of intermediaries standing between
+              the fjord and the customer.
+            </p>
+            <p class="text-navy-700 leading-relaxed">
+              That directness is not a slogan. It is an operating principle.
+              Exclusive distribution agreements with Norwegian producers give us
+              first call on quality and supply. End-to-end handling — from
+              harvest through cold chain to final delivery — gives us control
+              over condition and timing. The result is world-class northern
+              seafood, priced by efficiency rather than markup.
+            </p>
+            <div
+              class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-navy-900/15"
+            >
+              <div>
+                <p class="font-display text-3xl text-navy-900">16</p>
+                <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
+              </div>
+              <div>
+                <p class="font-display text-3xl text-navy-900">3</p>
+                <p class="kicker text-xs text-navy-500 mt-1">Export Regions</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative reveal" style="transition-delay: 0.15s">
+            <Image
+              src={catchAssortment}
+              alt="A selection of freshly landed Norwegian langoustine, scallop, oyster and sea urchin"
+              widths={[480, 768, 1024]}
+              class="w-full h-auto rounded-sm"
+            />
+            <div
+              class="absolute -bottom-6 -left-6 w-32 h-32 border border-navy-500/30 hidden md:block"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-28 md:py-36 bg-paper-100 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-16 reveal">
+          <p class="kicker text-sm text-navy-500 mb-5">The Catalogue</p>
+          <h2
+            class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
+          >
+            Sixteen Products, One Origin: Norway
+          </h2>
+          <p class="text-navy-700 leading-relaxed">
+            Every item in our catalogue is sourced from Norwegian waters and
+            fjords, handled under strict cold-chain discipline from harvest to
+            export. Filter by category to explore current availability.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mb-12 reveal">
+          {
+            filters.map((f) => (
+              <button
+                data-filter={f.key}
+                class="filter-btn kicker text-xs px-5 py-2.5 border border-navy-900/20 text-navy-700 hover:border-navy-900 transition-colors"
+              >
+                {f.label}
+              </button>
+            ))
+          }
+        </div>
+
+        <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            products.map((p) => (
+              <div
+                data-categories={p.categories.join(" ")}
+                class="product-card border border-navy-900/15 bg-paper-200/60 flex flex-col"
+              >
+                <div class="aspect-[4/3] w-full overflow-hidden border-b border-navy-900/15 bg-navy-900/5 flex items-center justify-center">
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      widths={[400, 600]}
+                      class="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div class="flex flex-col items-center gap-3 text-navy-400 px-6 text-center">
+                      <Icon name={p.icon} class="w-9 h-9" />
+                      <span class="kicker text-[10px]">
+                        Photography Pending
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    {p.categories.map((c) => (
+                      <span class="kicker text-[10px] border border-plum-500/40 text-plum-500 px-2 py-1">
+                        {c === "fresh"
+                          ? "Fresh"
+                          : c === "frozen"
+                            ? "Frozen"
+                            : "Premium"}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 class="font-display text-xl mb-2 text-navy-900">
+                    {p.name}
+                  </h3>
+                  <p class="text-sm text-navy-600 leading-relaxed mb-4 flex-1">
+                    {p.blurb}
+                  </p>
+                  <div class="pt-4 border-t border-navy-900/10">
+                    <p class="kicker text-[10px] text-navy-400 mb-2">
+                      Available As
+                    </p>
+                    <p class="text-sm font-mono tabular-figures text-navy-700">
+                      {p.forms.join(" · ")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Origin & Handling -->
+    <section id="origin" class="py-28 md:py-36 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+          <div class="relative order-2 md:order-1 reveal">
+            <Image
+              src={fjordOrigin}
+              alt="Norwegian fjord and snow-capped mountains, sea urchins on ice in the foreground"
+              widths={[480, 768, 1024]}
+              class="w-full h-auto rounded-sm"
+            />
+          </div>
+          <div
+            class="order-1 md:order-2 reveal"
+            style="transition-delay: 0.15s"
+          >
+            <p class="kicker text-sm text-navy-500 mb-5">Origin & Handling</p>
+            <h2
+              class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
+            >
+              Every Product, Traced to Norway
+            </h2>
+            <p class="text-navy-700 leading-relaxed">
+              All Cisler Foods product originates in Norwegian waters and fjords
+              — wild-caught and farmed under some of the world's most tightly
+              regulated fisheries. From the moment of harvest, product is
+              handled according to its intended state: fresh, frozen or live,
+              each with its own discipline.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-px bg-navy-900/15 reveal">
+          <div class="bg-paper-200 p-8">
+            <Icon
+              name="lucide:thermometer-snowflake"
+              class="w-7 h-7 text-navy-500 mb-5"
+            />
+            <h3 class="font-display text-xl mb-3">Fresh</h3>
+            <p class="text-sm text-navy-600 leading-relaxed">
+              Harvested and processed within hours, fresh product moves under
+              continuous cold chain at 0–2°C, timed against flight schedules to
+              reach Dubai and onward markets within 24–48 hours of leaving
+              Norway.
+            </p>
+          </div>
+          <div class="bg-paper-200 p-8">
+            <Icon name="lucide:snowflake" class="w-7 h-7 text-navy-500 mb-5" />
+            <h3 class="font-display text-xl mb-3">Frozen</h3>
+            <p class="text-sm text-navy-600 leading-relaxed">
+              Product is blast-frozen at peak condition to lock in texture and
+              flavour, then held at −18°C or below through storage, transit and
+              delivery — a longer window without compromising quality.
+            </p>
+          </div>
+          <div class="bg-paper-200 p-8">
+            <Icon name="lucide:waves" class="w-7 h-7 text-navy-500 mb-5" />
+            <h3 class="font-display text-xl mb-3">Live</h3>
+            <p class="text-sm text-navy-600 leading-relaxed">
+              King crab, oysters, scallops and sea urchin are shipped live under
+              controlled temperature and oxygen conditions, keeping product at
+              its most valuable state until the point of sale.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-20 grid md:grid-cols-2 gap-16 items-start reveal">
+          <div>
+            <p class="kicker text-sm text-navy-500 mb-5">
+              Packaging & Logistics
+            </p>
+            <h3 class="font-display text-2xl mb-5">
+              Packed for the Destination Market
+            </h3>
+            <p class="text-navy-700 leading-relaxed">
+              Every shipment is packed to the destination market's import
+              requirements — insulated export cartons for fresh and live
+              product, palletised frozen cartons for bulk orders, and full
+              labelling, weight and origin documentation attached to each
+              consignment. Temperature is logged from departure to arrival, and
+              available to buyers on request.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:package"
+                class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+              />
+              <p class="text-sm text-navy-700">
+                Insulated export cartons for fresh &amp; live shipments
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:layers"
+                class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+              />
+              <p class="text-sm text-navy-700">
+                Palletised frozen cartons for bulk orders
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:file-check"
+                class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+              />
+              <p class="text-sm text-navy-700">
+                Full labelling, weight &amp; origin documentation
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:thermometer"
+                class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+              />
+              <p class="text-sm text-navy-700">
+                Temperature logged from departure to arrival
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Export Markets -->
+    <section
+      id="markets"
+      class="py-28 md:py-36 bg-navy-900 text-paper-100 relative"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-20 reveal">
+          <p class="kicker text-sm text-navy-400 mb-5">Where We Trade</p>
+          <h2
+            class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
+          >
+            Norway to the World, Through Dubai
+          </h2>
+          <p class="text-navy-200 leading-relaxed">
+            We source exclusively from Norway and Europe and export through our
+            Dubai headquarters — the trade gateway between northern production
+            and the markets we serve.
+          </p>
+        </div>
+
+        <div class="reveal mb-20">
+          <svg
+            viewBox="0 0 900 220"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Trade route diagram: Norway and Europe to Dubai headquarters, exporting to the Middle East, China and Japan"
+          >
+            <line
+              x1="90"
+              y1="110"
+              x2="430"
+              y2="110"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="45"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="110"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+            <line
+              x1="470"
+              y1="110"
+              x2="620"
+              y2="175"
+              stroke="#5F7C7D"
+              stroke-width="1"
+              stroke-dasharray="4 6"></line>
+
+            <circle cx="60" cy="110" r="5" fill="#f2ece0"></circle>
+            <text
+              x="60"
+              y="145"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">NORWAY</text
+            >
+            <text
+              x="60"
+              y="163"
+              fill="#86988F"
+              font-size="11"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">& EUROPE</text
+            >
+
+            <circle cx="450" cy="110" r="7" fill="#f2ece0"></circle>
+            <text
+              x="450"
+              y="90"
+              fill="#f2ece0"
+              font-size="14"
+              letter-spacing="1.5"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace">DUBAI HQ</text
+            >
+
+            <circle cx="650" cy="45" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="49"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">MIDDLE EAST</text
+            >
+
+            <circle cx="650" cy="110" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="114"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">CHINA</text
+            >
+
+            <circle cx="650" cy="175" r="5" fill="#f2ece0"></circle>
+            <text
+              x="675"
+              y="179"
+              fill="#f2ece0"
+              font-size="13"
+              letter-spacing="1"
+              text-anchor="start"
+              font-family="IBM Plex Mono, monospace">JAPAN</text
+            >
+          </svg>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-px bg-navy-700/50 reveal">
+          <div class="bg-navy-800 p-8">
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <h3 class="font-display text-xl mb-3">Middle East</h3>
+            <p class="text-sm text-navy-200 leading-relaxed">
+              Full regional coverage across the Middle East, served directly
+              from our Dubai headquarters.
+            </p>
+          </div>
+          <div class="bg-navy-800 p-8">
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <h3 class="font-display text-xl mb-3">China</h3>
+            <p class="text-sm text-navy-200 leading-relaxed">
+              Direct import channels bringing premium northern seafood to
+              Chinese distributors and retailers.
+            </p>
+          </div>
+          <div class="bg-navy-800 p-8">
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <h3 class="font-display text-xl mb-3">Japan</h3>
+            <p class="text-sm text-navy-200 leading-relaxed">
+              Specification-grade product supplied to one of the world's most
+              demanding seafood markets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality & Credibility -->
+    <section class="py-28 md:py-36 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-16 reveal">
+          <p class="kicker text-sm text-navy-500 mb-5">Why Cisler Foods</p>
+          <h2
+            class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
+          >
+            Quality, Traceability &amp; Direct Partnership
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal">
+          <div class="flex gap-5">
+            <Icon
+              name="lucide:handshake"
+              class="w-7 h-7 text-navy-500 shrink-0"
+            />
+            <div>
+              <h3 class="font-display text-xl mb-2">Exclusive Distribution</h3>
+              <p class="text-sm text-navy-600 leading-relaxed">
+                Multiple exclusive distribution agreements with Norwegian
+                producers and fisheries give us direct, reliable access to
+                volume and quality other traders compete for.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <Icon name="lucide:route" class="w-7 h-7 text-navy-500 shrink-0" />
+            <div>
+              <h3 class="font-display text-xl mb-2">No Intermediaries</h3>
+              <p class="text-sm text-navy-600 leading-relaxed">
+                End-to-end distribution from harvest to final delivery removes
+                layers of markup — competitive pricing without compromising on
+                origin or handling standards.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <Icon
+              name="lucide:file-check"
+              class="w-7 h-7 text-navy-500 shrink-0"
+            />
+            <div>
+              <h3 class="font-display text-xl mb-2">Full Traceability</h3>
+              <p class="text-sm text-navy-600 leading-relaxed">
+                Every consignment is documented from vessel or farm through
+                export — origin, catch date and handling records available to
+                buyers on request.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <Icon
+              name="lucide:building-2"
+              class="w-7 h-7 text-navy-500 shrink-0"
+            />
+            <div>
+              <h3 class="font-display text-xl mb-2">
+                Dubai-Based, Globally Positioned
+              </h3>
+              <p class="text-sm text-navy-600 leading-relaxed">
+                Headquartered in the UAE's trade gateway, positioned to serve
+                Middle Eastern, Chinese and Japanese markets with speed and
+                regulatory familiarity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / RFQ -->
+    <section id="contact" class="py-28 md:py-36 bg-paper-100 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-5 gap-16">
+          <div class="lg:col-span-2 reveal">
+            <p class="kicker text-sm text-navy-500 mb-5">Request a Quote</p>
+            <h2
+              class="font-display text-3xl md:text-4xl font-light leading-tight mb-8"
+            >
+              Start a Conversation With Our Trade Desk
+            </h2>
+            <p class="text-navy-700 leading-relaxed mb-10">
+              Tell us what you're looking to source and in what volume. Our
+              trade desk will respond with availability, specification and
+              pricing.
+            </p>
+            <div class="space-y-6 border-t border-navy-900/15 pt-8">
+              <div class="flex items-start gap-4">
+                <Icon
+                  name="lucide:mail"
+                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                />
+                <div>
+                  <p class="kicker text-[10px] text-navy-400 mb-1">Email</p>
+                  <a href="mailto:info@cislerfoods.ae" class="text-navy-900"
+                    >info@cislerfoods.ae</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <Icon
+                  name="lucide:phone"
+                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                />
+                <div>
+                  <p class="kicker text-[10px] text-navy-400 mb-1">Phone</p>
+                  <a href="tel:+971585615004" class="text-navy-900"
+                    >+971 58 561 5004</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <Icon
+                  name="lucide:building-2"
+                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                />
+                <div>
+                  <p class="kicker text-[10px] text-navy-400 mb-1">
+                    Headquarters
+                  </p>
+                  <p class="text-navy-900">
+                    IFZA Business Park<br />Nadd Hessa, Dubai Silicon Oasis<br
+                    />Dubai, United Arab Emirates
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3 reveal" style="transition-delay: 0.15s">
+            <form
+              id="rfq-form"
+              class="border border-navy-900/15 bg-paper-200/60 p-8 md:p-10 space-y-6"
+            >
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    >Full Name</label
+                  >
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="company"
+                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    >Company</label
+                  >
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    required
+                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    >Email</label
+                  >
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="country"
+                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    >Country</label
+                  >
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    required
+                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="products"
+                  class="kicker text-[11px] text-navy-500 block mb-2"
+                  >Product(s) of Interest</label
+                >
+                <input
+                  id="products"
+                  name="products"
+                  type="text"
+                  placeholder="e.g. Atlantic Salmon, King Crab, Langoustine"
+                  class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="kicker text-[11px] text-navy-500 block mb-2"
+                  >Message / Estimated Volume</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-navy-900 text-paper-100 kicker text-sm px-8 py-4 hover:bg-navy-800 transition-colors"
+              >
+                Send Inquiry
+              </button>
+              <p class="text-xs text-navy-500">
+                Submitting opens your email client, addressed to
+                info@cislerfoods.ae, with your details pre-filled.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-navy-300 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
+        >
+          <a href="#" class="block w-16">
+            <Image
+              src={logo}
+              alt="Cisler Foods"
+              class="w-full h-auto rounded-sm"
+            />
+          </a>
+          <div class="flex flex-wrap gap-x-8 gap-y-3">
+            {
+              navLinks.map((link) => (
+                <a
+                  href={link.href}
+                  class="text-sm kicker text-navy-300 hover:text-paper-100 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8"
+        >
+          <p class="text-sm text-navy-400">
+            Cisler Foods DMCC · IFZA Business Park, Nadd Hessa, Dubai Silicon
+            Oasis, Dubai, UAE
+          </p>
+          <p class="text-sm text-navy-500">
+            &copy; {new Date().getFullYear()} Cisler Foods. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("menu-icon-open");
+      const iconClose = document.getElementById("menu-icon-close");
+
+      menuToggle?.addEventListener("click", () => {
+        const isHidden = mobileMenu?.classList.contains("hidden");
+        mobileMenu?.classList.toggle("hidden");
+        iconOpen?.classList.toggle("hidden");
+        iconClose?.classList.toggle("hidden");
+        void isHidden;
+      });
+
+      const filterButtons =
+        document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+      const productCards =
+        document.querySelectorAll<HTMLElement>(".product-card");
+
+      const setActiveFilter = (key: string) => {
+        filterButtons.forEach((btn) => {
+          const active = btn.dataset.filter === key;
+          btn.classList.toggle("bg-navy-900", active);
+          btn.classList.toggle("text-paper-100", active);
+          btn.classList.toggle("border-navy-900", active);
+        });
+        productCards.forEach((card) => {
+          const categories = card.dataset.categories?.split(" ") ?? [];
+          const show = key === "all" || categories.includes(key);
+          card.classList.toggle("hidden", !show);
+        });
+      };
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () =>
+          setActiveFilter(btn.dataset.filter ?? "all"),
+        );
+      });
+      setActiveFilter("all");
+
+      const rfqForm = document.getElementById(
+        "rfq-form",
+      ) as HTMLFormElement | null;
+      rfqForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(rfqForm);
+        const lines = [
+          `Company: ${data.get("company")}`,
+          `Country: ${data.get("country")}`,
+          `Products of interest: ${data.get("products")}`,
+          "",
+          `${data.get("message")}`,
+        ];
+        const subject = encodeURIComponent(
+          `RFQ from ${data.get("name")} — ${data.get("company")}`,
+        );
+        const body = encodeURIComponent(lines.join("\n"));
+        window.location.href = `mailto:info@cislerfoods.ae?subject=${subject}&body=${body}`;
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
