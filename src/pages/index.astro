@@ -15,6 +15,14 @@ import salmonWhole from "../assets/images/salmon-whole.jpg";
 import codWhole from "../assets/images/cod-whole.jpg";
 import troutWhole from "../assets/images/trout-whole.png";
 import mackerelWhole from "../assets/images/mackerel-whole.png";
+import snowCrab from "../assets/images/snow-crab.png";
+import langoustine from "../assets/images/langoustine.png";
+import scallops from "../assets/images/scallops.png";
+import halibut from "../assets/images/halibut.png";
+import herringWhole from "../assets/images/herring-whole.png";
+import herringSushi from "../assets/images/herring-sushi.png";
+import bottargaLing from "../assets/images/bottarga-ling.png";
+import bottargaWolffish from "../assets/images/bottarga-wolffish.png";
 
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
 
@@ -63,6 +71,7 @@ const products: Product[] = [
     forms: ["Frozen", "Snow Crab Legs", "Clusters"],
     blurb:
       "Slender legs and delicate, brine-sweet meat, supplied frozen at scale for foodservice and retail.",
+    image: snowCrab,
     icon: "lucide:shell",
   },
   {
@@ -71,6 +80,7 @@ const products: Product[] = [
     forms: ["Fresh", "Frozen"],
     blurb:
       "Cold-water langoustine with delicate, almost sweet flesh — sold fresh or snap-frozen at peak condition.",
+    image: langoustine,
     icon: "lucide:shrimp",
   },
   {
@@ -79,6 +89,7 @@ const products: Product[] = [
     forms: ["Live", "Frozen"],
     blurb:
       "Hand-selected, live or individually frozen, prized for their clean sweetness.",
+    image: scallops,
     icon: "lucide:shell",
   },
   {
@@ -105,6 +116,7 @@ const products: Product[] = [
     forms: ["Frozen"],
     blurb:
       "Frozen to sushi-grade specification — a specialist cut for discerning kitchens.",
+    image: herringSushi,
     icon: "lucide:fish",
   },
   {
@@ -122,6 +134,7 @@ const products: Product[] = [
     forms: ["Fresh", "Frozen", "Fillet"],
     blurb:
       "A premium flatfish with dense, ivory flesh — fresh, frozen or filleted to order.",
+    image: halibut,
     icon: "lucide:fish",
   },
   {
@@ -137,6 +150,7 @@ const products: Product[] = [
     categories: ["frozen"],
     forms: ["Frozen", "Whole"],
     blurb: "A northern staple, frozen whole for processing, curing or retail.",
+    image: herringWhole,
     icon: "lucide:fish",
   },
   {
@@ -145,6 +159,7 @@ const products: Product[] = [
     forms: ["Premium Bottarga"],
     blurb:
       "Cured, pressed ling roe — a Mediterranean technique applied to northern fish.",
+    image: bottargaLing,
     icon: "lucide:package",
   },
   {
@@ -153,6 +168,7 @@ const products: Product[] = [
     forms: ["Premium Bottarga"],
     blurb:
       "A rarer bottarga, cured from spotted wolffish roe for connoisseur accounts.",
+    image: bottargaWolffish,
     icon: "lucide:package",
   },
 ];
