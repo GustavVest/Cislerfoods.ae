@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logo from "../assets/images/logo.jpg";
+import logo from "../assets/images/logo.png";
 import catchAssortment from "../assets/images/catch-assortment.jpg";
 import seaUrchinPlated from "../assets/images/sea-urchin-plated.jpg";
 import kingCrab from "../assets/images/king-crab.png";
@@ -221,11 +221,7 @@ const navLinks = [
         class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
       >
         <a href="#" class="block w-14 shrink-0">
-          <Image
-            src={logo}
-            alt="Cisler Foods"
-            class="w-full h-auto rounded-sm"
-          />
+          <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
         </a>
         <div class="hidden md:flex items-center gap-10">
           {
@@ -283,7 +279,7 @@ const navLinks = [
         <Image
           src={logo}
           alt=""
-          class="w-40 md:w-48 mx-auto mb-10 rounded-sm animate-fade-up"
+          class="w-40 md:w-48 mx-auto mb-10 animate-fade-up"
         />
         <p
           class="kicker text-sm text-navy-300 mb-6 animate-fade-up"
@@ -995,11 +991,7 @@ const navLinks = [
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
         >
           <a href="#" class="block w-16">
-            <Image
-              src={logo}
-              alt="Cisler Foods"
-              class="w-full h-auto rounded-sm"
-            />
+            <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
           </a>
           <div class="flex flex-wrap gap-x-8 gap-y-3">
             {
