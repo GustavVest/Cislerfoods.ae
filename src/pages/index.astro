@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import RopeDivider from "../components/RopeDivider.astro";
+import WorldMap from "../components/WorldMap.astro";
 import logo from "../assets/images/logo.png";
 import catchAssortment from "../assets/images/catch-assortment.jpg";
 import seaUrchinPlated from "../assets/images/sea-urchin-plated.jpg";
@@ -411,7 +412,10 @@ const navLinks = [
     </section>
 
     <!-- Products -->
-    <section id="products" class="py-28 md:py-36 bg-paper-100 relative">
+    <section
+      id="products"
+      class="py-28 md:py-36 bg-paper-100 paper-texture relative"
+    >
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mb-16 reveal">
           <p class="kicker text-sm text-navy-500 mb-5">The Catalogue</p>
@@ -531,7 +535,7 @@ const navLinks = [
         </div>
 
         <div class="grid md:grid-cols-3 gap-px bg-navy-900/15 reveal">
-          <div class="bg-paper-200 p-8">
+          <div class="bg-paper-200 paper-texture p-8">
             <Icon
               name="lucide:thermometer-snowflake"
               class="w-7 h-7 text-navy-500 mb-5"
@@ -544,7 +548,7 @@ const navLinks = [
               Norway.
             </p>
           </div>
-          <div class="bg-paper-200 p-8">
+          <div class="bg-paper-200 paper-texture p-8">
             <Icon name="lucide:snowflake" class="w-7 h-7 text-navy-500 mb-5" />
             <h3 class="font-display text-xl mb-3">Frozen</h3>
             <p class="text-sm text-navy-600 leading-relaxed">
@@ -553,7 +557,7 @@ const navLinks = [
               delivery — a longer window without compromising quality.
             </p>
           </div>
-          <div class="bg-paper-200 p-8">
+          <div class="bg-paper-200 paper-texture p-8">
             <Icon name="lucide:waves" class="w-7 h-7 text-navy-500 mb-5" />
             <h3 class="font-display text-xl mb-3">Live</h3>
             <p class="text-sm text-navy-600 leading-relaxed">
@@ -651,110 +655,10 @@ const navLinks = [
           </p>
         </div>
 
-        <div class="reveal mb-20">
-          <svg
-            viewBox="0 0 900 220"
-            class="w-full h-auto"
-            role="img"
-            aria-label="Trade route diagram: Norway and Europe to Dubai headquarters, exporting to the Middle East, China and Japan"
-          >
-            <line
-              x1="90"
-              y1="110"
-              x2="430"
-              y2="110"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="45"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="110"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="175"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-
-            <circle cx="60" cy="110" r="5" fill="#f2ece0"></circle>
-            <text
-              x="60"
-              y="145"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">NORWAY</text
-            >
-            <text
-              x="60"
-              y="163"
-              fill="#86988F"
-              font-size="11"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">& EUROPE</text
-            >
-
-            <circle cx="450" cy="110" r="7" fill="#f2ece0"></circle>
-            <text
-              x="450"
-              y="90"
-              fill="#f2ece0"
-              font-size="14"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">DUBAI HQ</text
-            >
-
-            <circle cx="650" cy="45" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="49"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">MIDDLE EAST</text
-            >
-
-            <circle cx="650" cy="110" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="114"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">CHINA</text
-            >
-
-            <circle cx="650" cy="175" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="179"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">JAPAN</text
-            >
-          </svg>
+        <div
+          class="reveal mb-20 border border-navy-700/50 bg-navy-950/30 p-4 md:p-8"
+        >
+          <WorldMap />
         </div>
 
         <div class="grid md:grid-cols-3 gap-px bg-navy-700/50 reveal">
@@ -859,7 +763,10 @@ const navLinks = [
     </section>
 
     <!-- Contact / RFQ -->
-    <section id="contact" class="py-28 md:py-36 bg-paper-100 relative">
+    <section
+      id="contact"
+      class="py-28 md:py-36 bg-paper-100 paper-texture relative"
+    >
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-5 gap-16">
           <div class="lg:col-span-2 reveal">

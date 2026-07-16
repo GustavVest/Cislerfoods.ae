@@ -1,0 +1,223 @@
+---
+
+---
+
+<svg
+  viewBox="0 0 1000 460"
+  class="w-full h-auto"
+  role="img"
+  aria-label="Map showing Cisler Foods trade routes from Norway through our Dubai headquarters to the Middle East, China and Japan"
+>
+  <defs>
+    <marker
+      id="route-arrow"
+      viewBox="0 0 10 10"
+      refX="8"
+      refY="5"
+      markerWidth="6"
+      markerHeight="6"
+      orient="auto-start-reverse"
+    >
+      <path d="M0,0 L10,5 L0,10 Z" fill="#c9d2c9"></path>
+    </marker>
+    <pattern
+      id="graticule"
+      width="46"
+      height="46"
+      patternUnits="userSpaceOnUse"
+    >
+      <path
+        d="M0,23 H46 M23,0 V46"
+        stroke="#f2ece0"
+        stroke-width="0.4"
+        opacity="0.14"></path>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="460" fill="url(#graticule)"></rect>
+
+  <!-- Stars, echoing the mark -->
+  <g fill="#f2ece0" opacity="0.4">
+    <circle cx="120" cy="60" r="1.4"></circle>
+    <circle cx="340" cy="40" r="1"></circle>
+    <circle cx="710" cy="35" r="1.4"></circle>
+    <circle cx="930" cy="70" r="1"></circle>
+    <circle cx="60" cy="220" r="1"></circle>
+    <circle cx="960" cy="260" r="1.4"></circle>
+    <circle cx="270" cy="410" r="1"></circle>
+  </g>
+
+  <!-- Continents, muted -->
+  <g
+    fill="#2f5460"
+    fill-opacity="0.55"
+    stroke="#f2ece0"
+    stroke-opacity="0.18"
+    stroke-width="1"
+  >
+    <!-- North America -->
+    <path
+      d="M55,95 C50,70 95,40 155,42 C205,38 245,58 252,88 C266,105 258,138 228,148 C236,170 214,192 184,184 C168,208 128,206 116,180 C84,176 60,150 66,120 C52,112 50,102 55,95 Z"
+    ></path>
+    <!-- South America -->
+    <path
+      d="M178,232 C208,224 236,244 242,276 C252,312 248,352 232,388 C222,412 206,428 196,422 C184,402 180,370 174,340 C164,310 158,280 164,254 C168,240 172,233 178,232 Z"
+    ></path>
+    <!-- Africa -->
+    <path
+      d="M472,142 C502,130 538,134 558,154 C578,163 588,150 580,172 C592,186 596,206 586,222 C580,252 572,282 562,312 C556,342 546,372 530,388 C519,393 508,387 505,372 C495,342 487,312 480,282 C470,252 462,222 460,192 C458,171 462,153 472,142 Z"
+    ></path>
+    <!-- Australia -->
+    <path
+      d="M800,344 C832,332 868,338 884,358 C898,368 892,388 876,393 C866,408 838,410 818,402 C798,408 778,396 780,378 C768,370 774,352 800,344 Z"
+    ></path>
+    <!-- Antarctica sliver -->
+    <path d="M120,450 C300,436 620,436 880,450 L880,460 L120,460 Z"></path>
+  </g>
+
+  <!-- Europe -->
+  <path
+    d="M456,72 C450,55 468,38 486,44 C497,33 508,40 502,56 C518,60 524,78 512,92 C522,104 514,120 497,118 C486,128 466,122 462,106 C446,100 447,84 456,72 Z"
+    fill="#2f5460"
+    fill-opacity="0.55"
+    stroke="#f2ece0"
+    stroke-opacity="0.18"
+    stroke-width="1"></path>
+
+  <!-- Asia -->
+  <path
+    d="M598,68 C652,46 726,42 788,58 C826,64 854,84 858,108 C874,118 868,140 852,146 C858,162 840,178 818,172 C798,192 766,196 746,184 C726,200 696,204 678,188 C658,200 628,194 618,174 C598,180 583,163 590,144 C574,134 578,112 596,102 C590,88 594,76 598,68 Z"
+    fill="#2f5460"
+    fill-opacity="0.55"
+    stroke="#f2ece0"
+    stroke-opacity="0.18"
+    stroke-width="1"></path>
+
+  <!-- Japan -->
+  <path
+    d="M878,112 C888,106 900,111 897,122 C904,128 900,140 888,138 C883,150 869,146 869,134 C860,131 863,118 878,112 Z"
+    fill="#2f5460"
+    fill-opacity="0.55"
+    stroke="#f2ece0"
+    stroke-opacity="0.18"
+    stroke-width="1"></path>
+
+  <!-- Middle East, highlighted as an active market -->
+  <path
+    d="M552,158 C574,147 602,152 618,168 C630,178 626,196 612,202 C618,214 604,226 588,220 C570,226 552,214 550,197 C540,186 540,169 552,158 Z"
+    fill="#c9d2c9"
+    fill-opacity="0.3"
+    stroke="#c9d2c9"
+    stroke-opacity="0.7"
+    stroke-width="1.2"></path>
+
+  <!-- China, highlighted -->
+  <ellipse
+    cx="740"
+    cy="120"
+    rx="46"
+    ry="34"
+    fill="#c9d2c9"
+    fill-opacity="0.22"
+    stroke="#c9d2c9"
+    stroke-opacity="0.6"
+    stroke-width="1"></ellipse>
+
+  <!-- Japan, highlighted outline -->
+  <path
+    d="M878,112 C888,106 900,111 897,122 C904,128 900,140 888,138 C883,150 869,146 869,134 C860,131 863,118 878,112 Z"
+    fill="none"
+    stroke="#c9d2c9"
+    stroke-opacity="0.7"
+    stroke-width="1.4"></path>
+
+  <!-- Trade routes -->
+  <g
+    fill="none"
+    stroke="#f2ece0"
+    stroke-width="1.6"
+    stroke-dasharray="1 7"
+    stroke-linecap="round"
+  >
+    <path d="M478,52 C520,90 560,140 588,182" marker-end="url(#route-arrow)"
+    ></path>
+    <path d="M588,182 C640,150 690,128 730,118" marker-end="url(#route-arrow)"
+    ></path>
+    <path d="M588,182 C680,155 800,135 878,122" marker-end="url(#route-arrow)"
+    ></path>
+  </g>
+
+  <!-- Norway marker -->
+  <g>
+    <circle cx="478" cy="52" r="5" fill="#f2ece0"></circle>
+    <circle
+      cx="478"
+      cy="52"
+      r="9"
+      fill="none"
+      stroke="#f2ece0"
+      stroke-opacity="0.5"></circle>
+    <text
+      x="478"
+      y="34"
+      fill="#f2ece0"
+      font-size="14"
+      letter-spacing="1.5"
+      text-anchor="middle"
+      font-family="IBM Plex Mono, monospace">NORWAY</text
+    >
+  </g>
+
+  <!-- Dubai HQ marker -->
+  <g>
+    <rect
+      x="582"
+      y="176"
+      width="12"
+      height="12"
+      transform="rotate(45 588 182)"
+      fill="#c9d2c9"></rect>
+    <text
+      x="588"
+      y="210"
+      fill="#f2ece0"
+      font-size="14"
+      letter-spacing="1.5"
+      text-anchor="middle"
+      font-family="IBM Plex Mono, monospace">DUBAI HQ</text
+    >
+  </g>
+
+  <!-- China label -->
+  <text
+    x="740"
+    y="165"
+    fill="#f2ece0"
+    font-size="13"
+    letter-spacing="1.5"
+    text-anchor="middle"
+    font-family="IBM Plex Mono, monospace">CHINA</text
+  >
+
+  <!-- Japan label -->
+  <text
+    x="882"
+    y="95"
+    fill="#f2ece0"
+    font-size="13"
+    letter-spacing="1.5"
+    text-anchor="middle"
+    font-family="IBM Plex Mono, monospace">JAPAN</text
+  >
+
+  <!-- Middle East label -->
+  <text
+    x="585"
+    y="248"
+    fill="#f2ece0"
+    font-size="13"
+    letter-spacing="1.5"
+    text-anchor="middle"
+    font-family="IBM Plex Mono, monospace">MIDDLE EAST</text
+  >
+</svg>
