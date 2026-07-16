@@ -1,0 +1,43 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+const patternId = `rope-hatch-${crypto.randomUUID().slice(0, 8)}`;
+---
+
+<svg
+  viewBox="0 0 160 16"
+  preserveAspectRatio="none"
+  class={`rope-divider ${className}`}
+  aria-hidden="true"
+>
+  <defs>
+    <pattern
+      id={patternId}
+      width="9"
+      height="16"
+      patternUnits="userSpaceOnUse"
+      patternTransform="rotate(35)"
+    >
+      <rect width="9" height="16" fill="none"></rect>
+      <line
+        x1="0"
+        y1="0"
+        x2="0"
+        y2="16"
+        stroke="currentColor"
+        stroke-width="3.4"></line>
+    </pattern>
+  </defs>
+  <rect
+    x="1"
+    y="1"
+    width="158"
+    height="14"
+    rx="7"
+    ry="7"
+    fill={`url(#${patternId})`}
+    stroke="currentColor"
+    stroke-width="1"></rect>
+</svg>

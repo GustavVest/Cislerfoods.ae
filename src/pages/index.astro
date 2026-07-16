@@ -2,12 +2,19 @@
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import RopeDivider from "../components/RopeDivider.astro";
 import logo from "../assets/images/logo.png";
 import catchAssortment from "../assets/images/catch-assortment.jpg";
 import seaUrchinPlated from "../assets/images/sea-urchin-plated.jpg";
 import kingCrab from "../assets/images/king-crab.png";
 import oysterShoreline from "../assets/images/oyster-shoreline.png";
 import fjordOrigin from "../assets/images/fjord-origin.jpg";
+import fjordReflection from "../assets/images/fjord-reflection.jpg";
+import heroBackground from "../assets/images/hero-background.jpg";
+import salmonWhole from "../assets/images/salmon-whole.jpg";
+import codWhole from "../assets/images/cod-whole.jpg";
+import troutWhole from "../assets/images/trout-whole.png";
+import mackerelWhole from "../assets/images/mackerel-whole.png";
 
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
 
@@ -29,6 +36,7 @@ const products: Product[] = [
     forms: ["Fresh", "Frozen", "Whole", "Fillet", "Smoked"],
     blurb:
       "Fjord-raised, prized for its rich marbling and clean, buttery flavour — our highest-volume export.",
+    image: salmonWhole,
     icon: "lucide:fish",
   },
   {
@@ -37,6 +45,7 @@ const products: Product[] = [
     forms: ["Fresh", "Frozen", "Whole", "Fillet"],
     blurb:
       "A leaner, more delicate cousin to salmon, favoured across Middle Eastern and Asian kitchens alike.",
+    image: troutWhole,
     icon: "lucide:fish",
   },
   {
@@ -104,6 +113,7 @@ const products: Product[] = [
     forms: ["Fresh", "Frozen", "Fillet", "Whole"],
     blurb:
       "The benchmark whitefish — firm, flaky, and available fresh, frozen, whole or filleted.",
+    image: codWhole,
     icon: "lucide:fish",
   },
   {
@@ -119,6 +129,7 @@ const products: Product[] = [
     categories: ["frozen"],
     forms: ["Frozen", "Whole"],
     blurb: "Fast-moving pelagic fish, frozen whole at peak fat content.",
+    image: mackerelWhole,
     icon: "lucide:fish",
   },
   {
@@ -269,23 +280,30 @@ const navLinks = [
 
     <!-- Hero -->
     <section
-      class="relative bg-navy-900 text-paper-100 pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden"
+      class="relative text-paper-100 pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden"
     >
+      <Image
+        src={heroBackground}
+        alt=""
+        widths={[768, 1280, 1920, 2560]}
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-navy-950/70"></div>
       <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(95,124,125,0.18),transparent_55%)]"
+        class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(95,124,125,0.22),transparent_55%)]"
       >
       </div>
       <div class="relative max-w-5xl mx-auto px-6 text-center">
         <Image
           src={logo}
-          alt=""
-          class="w-40 md:w-48 mx-auto mb-10 animate-fade-up"
+          alt="Cisler Foods — Northern Seafood"
+          class="w-64 md:w-80 mx-auto mb-10 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
         />
         <p
-          class="kicker text-sm text-navy-300 mb-6 animate-fade-up"
+          class="kicker text-sm text-navy-200 mb-10 animate-fade-up"
           style="animation-delay: 0.1s"
         >
-          Northern Seafood Trading House — Dubai
+          Purveyors of Northern Seafood to the Finest Markets
         </p>
         <h1
           class="font-display text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-8 animate-fade-up"
@@ -295,7 +313,7 @@ const navLinks = [
           <em class="italic text-navy-200">Traded Without Compromise</em>
         </h1>
         <p
-          class="text-lg text-navy-200 max-w-2xl mx-auto mb-12 animate-fade-up"
+          class="text-lg text-navy-100 max-w-2xl mx-auto mb-12 animate-fade-up"
           style="animation-delay: 0.3s"
         >
           Cisler Foods sources Atlantic salmon, king crab, langoustine and more
@@ -303,6 +321,18 @@ const navLinks = [
           world-class northern seafood to the Middle East, China and Japan, end
           to end, without intermediaries.
         </p>
+        <div
+          class="flex items-center justify-center gap-4 md:gap-8 mb-8 animate-fade-up"
+          style="animation-delay: 0.35s"
+        >
+          <RopeDivider
+            class="hidden sm:block w-16 md:w-24 h-4 text-teal-300/70"
+          />
+          <span class="kicker text-xs text-navy-300">Est. Trading House</span>
+          <RopeDivider
+            class="hidden sm:block w-16 md:w-24 h-4 text-teal-300/70"
+          />
+        </div>
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
           style="animation-delay: 0.4s"
@@ -596,10 +626,18 @@ const navLinks = [
     <!-- Export Markets -->
     <section
       id="markets"
-      class="py-28 md:py-36 bg-navy-900 text-paper-100 relative"
+      class="py-28 md:py-36 text-paper-100 relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto px-6">
+      <Image
+        src={fjordReflection}
+        alt=""
+        widths={[768, 1280, 1920]}
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-navy-900/90"></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
         <div class="max-w-2xl mb-20 reveal">
+          <RopeDivider class="w-20 h-4 text-teal-300/70 mb-6" />
           <p class="kicker text-sm text-navy-400 mb-5">Where We Trade</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
@@ -752,6 +790,7 @@ const navLinks = [
     <section class="py-28 md:py-36 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mb-16 reveal">
+          <RopeDivider class="w-20 h-4 text-navy-400 mb-6" />
           <p class="kicker text-sm text-navy-500 mb-5">Why Cisler Foods</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
@@ -987,6 +1026,9 @@ const navLinks = [
     <!-- Footer -->
     <footer class="bg-navy-900 text-navy-300 py-16">
       <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-center mb-10">
+          <RopeDivider class="w-28 h-4 text-teal-300/60" />
+        </div>
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
         >
