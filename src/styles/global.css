@@ -79,11 +79,12 @@ html {
 
 /* 1:1 recreation of the reference rope border: three double-rules,
    two hatch rows leaning / then \, long/short dashes. Color is the
-   reference khaki #b7b09a blended 50% toward navy-900 for softness. */
+   reference khaki #b7b09a blended 50% toward navy-900 for softness.
+   50% more transparent for softer visual presence. */
 .rope-border {
   background-origin: content-box;
   background-clip: content-box;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23667470'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23667470'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23667470' opacity='0.5'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23667470' opacity='0.5'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: auto 100%;
 }

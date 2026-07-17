@@ -26,6 +26,8 @@ import bottargaWolffish from "../assets/images/bottarga-wolffish.png";
 import worldMap from "../assets/images/world-map.png";
 import specialtyJars from "../assets/images/specialty-jars.jpg";
 import pinkSalmonSmoked from "../assets/images/pink-salmon-smoked.png";
+import kingCrabJar from "../assets/images/king-crab-jar.png";
+import scallopJar from "../assets/images/scallop-jar.png";
 
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
 
@@ -46,7 +48,7 @@ const products: Product[] = [
     categories: ["fresh", "frozen", "premium"],
     forms: ["Fresh", "Frozen", "Whole", "Fillet", "Smoked"],
     blurb:
-      "Fjord-raised, prized for its rich marbling and clean, buttery flavour — our highest-volume export.",
+      "Fjord-raised, prized for its rich marbling and clean, buttery flavour - our highest-volume export.",
     image: salmonWhole,
     icon: "lucide:fish",
   },
@@ -64,7 +66,7 @@ const products: Product[] = [
     categories: ["fresh", "frozen", "premium"],
     forms: ["Live", "Frozen", "King Crab Legs (Frozen)"],
     blurb:
-      "The Barents Sea's giant — sweet, dense meat landed live and moved fast.",
+      "The Barents Sea's giant - sweet, dense meat landed live and moved fast.",
     image: kingCrab,
     icon: "lucide:shell",
   },
@@ -82,7 +84,7 @@ const products: Product[] = [
     categories: ["fresh", "frozen"],
     forms: ["Fresh", "Frozen"],
     blurb:
-      "Cold-water langoustine with delicate, almost sweet flesh — sold fresh or snap-frozen at peak condition.",
+      "Cold-water langoustine with delicate, almost sweet flesh - sold fresh or snap-frozen at peak condition.",
     image: langoustine,
     icon: "lucide:shrimp",
   },
@@ -109,7 +111,7 @@ const products: Product[] = [
     categories: ["fresh", "premium"],
     forms: ["Live", "Frozen"],
     blurb:
-      "Uni at its most vivid — live or frozen roe from cold, clean northern waters.",
+      "Uni at its most vivid - live or frozen roe from cold, clean northern waters.",
     image: seaUrchinPlated,
     icon: "lucide:sun",
   },
@@ -118,7 +120,7 @@ const products: Product[] = [
     categories: ["premium"],
     forms: ["Frozen"],
     blurb:
-      "Frozen to sushi-grade specification — a specialist cut for discerning kitchens.",
+      "Frozen to sushi-grade specification - a specialist cut for discerning kitchens.",
     image: herringSushi,
     icon: "lucide:fish",
   },
@@ -127,7 +129,7 @@ const products: Product[] = [
     categories: ["fresh", "frozen"],
     forms: ["Fresh", "Frozen", "Fillet", "Whole"],
     blurb:
-      "The benchmark whitefish — firm, flaky, and available fresh, frozen, whole or filleted.",
+      "The benchmark whitefish - firm, flaky, and available fresh, frozen, whole or filleted.",
     image: codWhole,
     icon: "lucide:fish",
   },
@@ -136,7 +138,7 @@ const products: Product[] = [
     categories: ["fresh", "frozen"],
     forms: ["Fresh", "Frozen", "Fillet"],
     blurb:
-      "A premium flatfish with dense, ivory flesh — fresh, frozen or filleted to order.",
+      "A premium flatfish with dense, ivory flesh - fresh, frozen or filleted to order.",
     image: halibut,
     icon: "lucide:fish",
   },
@@ -157,12 +159,21 @@ const products: Product[] = [
     icon: "lucide:fish",
   },
   {
-    name: "Scallop & King Crab in Own Juice",
+    name: "King Crab in Own Juice",
     categories: ["premium"],
     forms: ["Jarred", "In Own Juice", "Ready to Eat"],
     blurb:
-      "Norwegian scallop and king crab meat preserved in nothing but their own juice — a ready-to-eat specialty produced in our UAE facility.",
-    image: specialtyJars,
+      "Norwegian king crab meat preserved in nothing but its own juice - premium first phalanx meat, ready to serve. Produced in our UAE facility.",
+    image: kingCrabJar,
+    icon: "lucide:package",
+  },
+  {
+    name: "Scallop in Own Juice",
+    categories: ["premium"],
+    forms: ["Jarred", "In Own Juice", "Ready to Eat"],
+    blurb:
+      "Natural Pacific scallop meat preserved in nothing but its own juice - hand-selected and ready to eat. Produced in our UAE facility.",
+    image: scallopJar,
     icon: "lucide:package",
   },
   {
@@ -179,7 +190,7 @@ const products: Product[] = [
     categories: ["premium"],
     forms: ["Premium Bottarga"],
     blurb:
-      "Cured, pressed ling roe — a Mediterranean technique applied to northern fish.",
+      "Cured, pressed ling roe - a Mediterranean technique applied to northern fish.",
     image: bottargaLing,
     icon: "lucide:package",
   },
@@ -217,11 +228,11 @@ const navLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Cisler Foods — a Dubai-headquartered northern seafood trading house, sourcing Norwegian salmon, king crab, langoustine and more through exclusive producer agreements, exporting across Europe, the Middle East, China and Japan."
+      content="Cisler Foods - a Dubai-headquartered northern seafood trading house, sourcing Norwegian salmon, king crab, langoustine and more through exclusive producer agreements, exporting across Europe, the Middle East, China and Japan."
     />
     <meta
       property="og:title"
-      content="Cisler Foods — Northern Seafood Trading House"
+      content="Cisler Foods - Northern Seafood Trading House"
     />
     <meta
       property="og:description"
@@ -237,7 +248,7 @@ const navLinks = [
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Cisler Foods — Northern Seafood Trading House</title>
+    <title>Cisler Foods - Northern Seafood Trading House</title>
     {
       umamiId && (
         <script
@@ -254,11 +265,11 @@ const navLinks = [
   <body class="bg-paper-200 text-navy-900 font-body antialiased paper-texture">
     <!-- Navigation -->
     <nav
-      class="fixed top-0 left-0 right-0 z-50 bg-navy-900 border-b border-navy-700/50"
+      class="fixed top-0 left-0 right-0 z-50 bg-navy-900/75 backdrop-blur-sm border-b border-navy-700/30"
       id="nav"
     >
       <div
-        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between"
       >
         <a href="#" class="block w-24 shrink-0">
           <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
@@ -268,7 +279,7 @@ const navLinks = [
             navLinks.map((link) => (
               <a
                 href={link.href}
-                class="text-sm kicker text-paper-200/80 hover:text-paper-100 transition-colors"
+                class="text-xs sm:text-sm kicker text-paper-200/80 hover:text-paper-100 transition-colors"
               >
                 {link.label}
               </a>
@@ -296,7 +307,10 @@ const navLinks = [
       >
         {
           navLinks.map((link) => (
-            <a href={link.href} class="text-sm kicker text-paper-200/80">
+            <a
+              href={link.href}
+              class="text-xs sm:text-sm kicker text-paper-200/80"
+            >
               {link.label}
             </a>
           ))
@@ -309,12 +323,12 @@ const navLinks = [
 
     <!-- Hero -->
     <section
-      class="relative text-paper-100 pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden"
+      class="relative text-paper-100 pt-24 pb-16 sm:pt-32 md:pt-52 md:pb-36 overflow-hidden"
     >
       <Image
         src={heroBackground}
         alt=""
-        widths={[768, 1280, 1920, 2560]}
+        widths={[480, 768, 1024, 1280, 1920, 2560]}
         class="absolute inset-0 w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-navy-950/70"></div>
@@ -325,8 +339,8 @@ const navLinks = [
       <div class="relative max-w-5xl mx-auto px-6 text-center">
         <Image
           src={logo}
-          alt="Cisler Foods — Northern Seafood"
-          class="w-80 md:w-[30rem] mx-auto mb-12 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+          alt="Cisler Foods - Northern Seafood"
+          class="w-56 sm:w-72 md:w-[30rem] mx-auto mb-12 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
         />
         <h1
           class="kicker text-base md:text-2xl text-paper-100 mb-12 animate-fade-up"
@@ -348,7 +362,7 @@ const navLinks = [
         >
           <a
             href="#products"
-            class="bg-paper-100 text-navy-900 kicker text-sm px-8 py-4 hover:bg-white transition-colors"
+            class="bg-paper-100 text-navy-900 kicker text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 hover:bg-white transition-colors"
           >
             View Catalogue
           </a>
@@ -381,14 +395,14 @@ const navLinks = [
               tables that value it. From our headquarters in Dubai, we connect
               exclusive Norwegian producers and fisheries directly to importers,
               distributors and foodservice operators across Europe, the Middle
-              East, China and Japan — with no layer of intermediaries standing
+              East, China and Japan - with no layer of intermediaries standing
               between the fjord and the customer.
             </p>
             <p class="text-navy-700 leading-relaxed">
               That directness is not a slogan. It is an operating principle.
               Exclusive distribution agreements with Norwegian producers give us
-              first call on quality and supply. End-to-end handling — from
-              harvest through cold chain to final delivery — gives us control
+              first call on quality and supply. End-to-end handling - from
+              harvest through cold chain to final delivery - gives us control
               over condition and timing. The result is world-class northern
               seafood, priced by efficiency rather than markup.
             </p>
@@ -396,7 +410,7 @@ const navLinks = [
               class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-navy-900/15"
             >
               <div>
-                <p class="font-display text-3xl text-navy-900">17</p>
+                <p class="font-display text-3xl text-navy-900">18</p>
                 <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
               </div>
               <div>
@@ -434,11 +448,11 @@ const navLinks = [
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
-            Seventeen Products from Northern Waters
+            Eighteen Products from Northern Waters
           </h2>
           <p class="text-navy-700 leading-relaxed">
             Our catalogue is anchored in Norwegian waters and fjords, joined by
-            a select line of specialties finished in our UAE facility — all
+            a select line of specialties finished in our UAE facility - all
             handled under strict cold-chain discipline from harvest to export.
             Filter by category to explore current availability.
           </p>
@@ -541,7 +555,7 @@ const navLinks = [
             </h2>
             <p class="text-navy-700 leading-relaxed">
               All Cisler Foods product originates in Norwegian waters and fjords
-              — wild-caught and farmed under some of the world's most tightly
+              - wild-caught and farmed under some of the world's most tightly
               regulated fisheries. From the moment of harvest, product is
               handled according to its intended state: fresh, frozen or live,
               each with its own discipline.
@@ -569,7 +583,7 @@ const navLinks = [
             <p class="text-sm text-navy-600 leading-relaxed">
               Product is blast-frozen at peak condition to lock in texture and
               flavour, then held at −18°C or below through storage, transit and
-              delivery — a longer window without compromising quality.
+              delivery - a longer window without compromising quality.
             </p>
           </div>
           <div class="bg-paper-200 paper-texture p-8">
@@ -593,7 +607,7 @@ const navLinks = [
             </h3>
             <p class="text-navy-700 leading-relaxed">
               Every shipment is packed to the destination market's import
-              requirements — insulated export cartons for fresh and live
+              requirements - insulated export cartons for fresh and live
               product, palletised frozen cartons for bulk orders, and full
               labelling, weight and origin documentation attached to each
               consignment. Temperature is logged from departure to arrival, and
@@ -666,7 +680,7 @@ const navLinks = [
           </h2>
           <p class="text-navy-200 leading-relaxed">
             We source in Norway and northern Europe and trade through our Dubai
-            headquarters — delivering to Europe, the Middle East, China and
+            headquarters - delivering to Europe, the Middle East, China and
             Japan.
           </p>
         </div>
@@ -755,11 +769,11 @@ const navLinks = [
               stroke-width="0.2"></circle>
           </svg>
           <span class="map-label" style="left: 52.7%; top: 15.5%">Norway</span>
-          <span class="map-label map-label-hq" style="left: 62.9%; top: 55%"
+          <span class="map-label map-label-hq" style="left: 56%; top: 44%"
             >Dubai HQ</span
           >
           <span class="map-label" style="left: 49.6%; top: 37%">Europe</span>
-          <span class="map-label" style="left: 60%; top: 63%">Middle East</span>
+          <span class="map-label" style="left: 48%; top: 38%">Middle East</span>
           <span class="map-label" style="left: 77.6%; top: 44%">China</span>
           <span class="map-label" style="left: 85.9%; top: 30%">Japan</span>
         </div>
@@ -837,7 +851,7 @@ const navLinks = [
               <h3 class="font-display text-xl mb-2">No Intermediaries</h3>
               <p class="text-sm text-navy-600 leading-relaxed">
                 End-to-end distribution from harvest to final delivery removes
-                layers of markup — competitive pricing without compromising on
+                layers of markup - competitive pricing without compromising on
                 origin or handling standards.
               </p>
             </div>
@@ -851,7 +865,7 @@ const navLinks = [
               <h3 class="font-display text-xl mb-2">Full Traceability</h3>
               <p class="text-sm text-navy-600 leading-relaxed">
                 Every consignment is documented from vessel or farm through
-                export — origin, catch date and handling records available to
+                export - origin, catch date and handling records available to
                 buyers on request.
               </p>
             </div>
@@ -1049,10 +1063,12 @@ const navLinks = [
     <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
 
     <!-- Footer -->
-    <footer class="bg-navy-900 text-navy-300 py-16">
+    <footer
+      class="relative bg-navy-900/90 backdrop-blur-sm text-navy-300 py-16"
+    >
       <div class="max-w-7xl mx-auto px-6">
         <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 md:gap-8 pb-10 border-b border-navy-700/50"
         >
           <a href="#" class="block w-28">
             <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
@@ -1073,10 +1089,7 @@ const navLinks = [
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8"
         >
-          <p class="text-sm text-navy-400">
-            Cisler Foods DMCC · IFZA Business Park, Nadd Hessa, Dubai Silicon
-            Oasis, Dubai, UAE
-          </p>
+          <p class="text-sm text-navy-400">Cisler Foods DMCC · Dubai, UAE</p>
           <p class="text-sm text-navy-500">
             &copy; {new Date().getFullYear()} Cisler Foods. All rights reserved.
           </p>
@@ -1138,7 +1151,7 @@ const navLinks = [
           `${data.get("message")}`,
         ];
         const subject = encodeURIComponent(
-          `RFQ from ${data.get("name")} — ${data.get("company")}`,
+          `RFQ from ${data.get("name")} - ${data.get("company")}`,
         );
         const body = encodeURIComponent(lines.join("\n"));
         window.location.href = `mailto:info@cislerfoods.ae?subject=${subject}&body=${body}`;
