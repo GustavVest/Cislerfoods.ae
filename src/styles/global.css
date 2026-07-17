@@ -97,18 +97,22 @@ html {
   position: absolute;
   transform: translate(-50%, 0);
   font-family: var(--font-mono);
-  font-size: clamp(8px, 1.1vw, 14px);
+  font-size: clamp(9px, 1.2vw, 15px);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #e6decb;
-  text-shadow: 0 1px 6px rgba(10, 30, 38, 0.9);
+  color: #f8f4ec;
+  background: rgba(10, 30, 38, 0.82);
+  border: 1px solid rgba(248, 244, 236, 0.35);
+  padding: 0.15em 0.6em;
   pointer-events: none;
   white-space: nowrap;
 }
 
 .map-label-hq {
-  color: #d8ccb2;
-  font-weight: 500;
+  color: #0a1e26;
+  background: rgba(248, 244, 236, 0.92);
+  border-color: rgba(10, 30, 38, 0.4);
+  font-weight: 600;
 }
 
 .tabular-figures {

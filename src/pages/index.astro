@@ -24,6 +24,8 @@ import herringSushi from "../assets/images/herring-sushi.png";
 import bottargaLing from "../assets/images/bottarga-ling.png";
 import bottargaWolffish from "../assets/images/bottarga-wolffish.png";
 import worldMap from "../assets/images/world-map.png";
+import specialtyJars from "../assets/images/specialty-jars.jpg";
+import pinkSalmonSmoked from "../assets/images/pink-salmon-smoked.png";
 
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
 
@@ -152,6 +154,24 @@ const products: Product[] = [
     forms: ["Frozen", "Whole"],
     blurb: "A northern staple, frozen whole for processing, curing or retail.",
     image: herringWhole,
+    icon: "lucide:fish",
+  },
+  {
+    name: "Scallop & King Crab in Own Juice",
+    categories: ["premium"],
+    forms: ["Jarred", "In Own Juice", "Ready to Eat"],
+    blurb:
+      "Norwegian scallop and king crab meat preserved in nothing but their own juice — a ready-to-eat specialty produced in our UAE facility.",
+    image: specialtyJars,
+    icon: "lucide:package",
+  },
+  {
+    name: "Smoked Pink Salmon",
+    categories: ["premium"],
+    forms: ["Smoked", "Pre-Sliced"],
+    blurb:
+      "Wild pink salmon from cold Russian Pacific waters, smoked and pre-sliced in our UAE facility.",
+    image: pinkSalmonSmoked,
     icon: "lucide:fish",
   },
   {
@@ -376,7 +396,7 @@ const navLinks = [
               class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-navy-900/15"
             >
               <div>
-                <p class="font-display text-3xl text-navy-900">15</p>
+                <p class="font-display text-3xl text-navy-900">17</p>
                 <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
               </div>
               <div>
@@ -414,12 +434,13 @@ const navLinks = [
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
-            Fifteen Products, One Origin: Norway
+            Seventeen Products from Northern Waters
           </h2>
           <p class="text-navy-700 leading-relaxed">
-            Every item in our catalogue is sourced from Norwegian waters and
-            fjords, handled under strict cold-chain discipline from harvest to
-            export. Filter by category to explore current availability.
+            Our catalogue is anchored in Norwegian waters and fjords, joined by
+            a select line of specialties finished in our UAE facility — all
+            handled under strict cold-chain discipline from harvest to export.
+            Filter by category to explore current availability.
           </p>
         </div>
 
@@ -665,9 +686,9 @@ const navLinks = [
           >
             <g
               fill="none"
-              stroke="#e6decb"
-              stroke-width="0.28"
-              stroke-dasharray="0.3 1.1"
+              stroke="#0a1e26"
+              stroke-width="0.7"
+              stroke-opacity="0.85"
               stroke-linecap="round"
             >
               <path d="M52.7,12.05 C51.5,15 50.8,17 49.9,18.4"></path>
@@ -675,7 +696,25 @@ const navLinks = [
               <path d="M63.5,27.5 C68,25 73,23.5 77,22.8"></path>
               <path d="M63.5,27.2 C72,22 79,20.5 85.1,20.3"></path>
             </g>
-            <circle cx="52.7" cy="12.05" r="0.55" fill="#e6decb"></circle>
+            <g
+              fill="none"
+              stroke="#f8f4ec"
+              stroke-width="0.32"
+              stroke-dasharray="0.5 1"
+              stroke-linecap="round"
+            >
+              <path d="M52.7,12.05 C51.5,15 50.8,17 49.9,18.4"></path>
+              <path d="M52.7,12.05 C56,17 60,23 62.6,27.2"></path>
+              <path d="M63.5,27.5 C68,25 73,23.5 77,22.8"></path>
+              <path d="M63.5,27.2 C72,22 79,20.5 85.1,20.3"></path>
+            </g>
+            <circle
+              cx="52.7"
+              cy="12.05"
+              r="0.6"
+              fill="#f8f4ec"
+              stroke="#0a1e26"
+              stroke-width="0.2"></circle>
             <circle
               cx="52.7"
               cy="12.05"
@@ -690,10 +729,30 @@ const navLinks = [
               width="1.1"
               height="1.1"
               transform="rotate(45 62.9 27.7)"
-              fill="#b7b09a"></rect>
-            <circle cx="49.6" cy="18.9" r="0.45" fill="#e6decb"></circle>
-            <circle cx="77.6" cy="22.7" r="0.45" fill="#e6decb"></circle>
-            <circle cx="85.9" cy="20.4" r="0.45" fill="#e6decb"></circle>
+              fill="#f8f4ec"
+              stroke="#0a1e26"
+              stroke-width="0.2"></rect>
+            <circle
+              cx="49.6"
+              cy="18.9"
+              r="0.5"
+              fill="#f8f4ec"
+              stroke="#0a1e26"
+              stroke-width="0.2"></circle>
+            <circle
+              cx="77.6"
+              cy="22.7"
+              r="0.5"
+              fill="#f8f4ec"
+              stroke="#0a1e26"
+              stroke-width="0.2"></circle>
+            <circle
+              cx="85.9"
+              cy="20.4"
+              r="0.5"
+              fill="#f8f4ec"
+              stroke="#0a1e26"
+              stroke-width="0.2"></circle>
           </svg>
           <span class="map-label" style="left: 52.7%; top: 15.5%">Norway</span>
           <span class="map-label map-label-hq" style="left: 62.9%; top: 55%"
