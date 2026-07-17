@@ -23,6 +23,7 @@ import herringWhole from "../assets/images/herring-whole.png";
 import herringSushi from "../assets/images/herring-sushi.png";
 import bottargaLing from "../assets/images/bottarga-ling.png";
 import bottargaWolffish from "../assets/images/bottarga-wolffish.png";
+import worldMap from "../assets/images/world-map.png";
 
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
 
@@ -196,7 +197,7 @@ const navLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Cisler Foods — a Dubai-headquartered northern seafood trading house, sourcing Norwegian salmon, king crab, langoustine and more through exclusive producer agreements, exporting across the Middle East, China and Japan."
+      content="Cisler Foods — a Dubai-headquartered northern seafood trading house, sourcing Norwegian salmon, king crab, langoustine and more through exclusive producer agreements, exporting across Europe, the Middle East, China and Japan."
     />
     <meta
       property="og:title"
@@ -204,7 +205,7 @@ const navLinks = [
     />
     <meta
       property="og:description"
-      content="Norwegian seafood, sourced through exclusive producer agreements, traded end-to-end from our Dubai headquarters to the Middle East, China and Japan."
+      content="Norwegian seafood, sourced through exclusive producer agreements, traded end-to-end from our Dubai headquarters to Europe, the Middle East, China and Japan."
     />
     <meta property="og:image" content="https://cislerfoods.ae/og-image.jpg" />
     <meta property="og:url" content="https://cislerfoods.ae" />
@@ -239,7 +240,7 @@ const navLinks = [
       <div
         class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <a href="#" class="block w-14 shrink-0">
+        <a href="#" class="block w-24 shrink-0">
           <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
         </a>
         <div class="hidden md:flex items-center gap-10">
@@ -305,30 +306,14 @@ const navLinks = [
         <Image
           src={logo}
           alt="Cisler Foods — Northern Seafood"
-          class="w-64 md:w-80 mx-auto mb-10 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+          class="w-80 md:w-[30rem] mx-auto mb-12 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
         />
-        <p
-          class="kicker text-sm text-navy-200 mb-10 animate-fade-up"
+        <h1
+          class="kicker text-base md:text-2xl text-paper-100 mb-12 animate-fade-up"
           style="animation-delay: 0.1s"
         >
           Purveyors of Northern Seafood to the Finest Markets
-        </p>
-        <h1
-          class="font-display text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-8 animate-fade-up"
-          style="animation-delay: 0.2s"
-        >
-          Norwegian Seafood,<br />
-          <em class="italic text-navy-200">Traded Without Compromise</em>
         </h1>
-        <p
-          class="text-lg text-navy-100 max-w-2xl mx-auto mb-12 animate-fade-up"
-          style="animation-delay: 0.3s"
-        >
-          Cisler Foods sources Atlantic salmon, king crab, langoustine and more
-          directly from exclusive Norwegian producers and fisheries — delivering
-          world-class northern seafood to the Middle East, China and Japan, end
-          to end, without intermediaries.
-        </p>
         <div
           class="flex items-center justify-center gap-4 md:gap-8 mb-8 animate-fade-up"
           style="animation-delay: 0.35s"
@@ -375,9 +360,9 @@ const navLinks = [
               seafood in northern Europe deserves a more direct route to the
               tables that value it. From our headquarters in Dubai, we connect
               exclusive Norwegian producers and fisheries directly to importers,
-              distributors and foodservice operators across the Middle East,
-              China and Japan — with no layer of intermediaries standing between
-              the fjord and the customer.
+              distributors and foodservice operators across Europe, the Middle
+              East, China and Japan — with no layer of intermediaries standing
+              between the fjord and the customer.
             </p>
             <p class="text-navy-700 leading-relaxed">
               That directness is not a slogan. It is an operating principle.
@@ -395,7 +380,7 @@ const navLinks = [
                 <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
               </div>
               <div>
-                <p class="font-display text-3xl text-navy-900">3</p>
+                <p class="font-display text-3xl text-navy-900">4</p>
                 <p class="kicker text-xs text-navy-500 mt-1">Export Regions</p>
               </div>
             </div>
@@ -659,119 +644,80 @@ const navLinks = [
             Norway to the World, Through Dubai
           </h2>
           <p class="text-navy-200 leading-relaxed">
-            We source exclusively from Norway and Europe and export through our
-            Dubai headquarters — the trade gateway between northern production
-            and the markets we serve.
+            We source in Norway and northern Europe and trade through our Dubai
+            headquarters — delivering to Europe, the Middle East, China and
+            Japan.
           </p>
         </div>
 
-        <div class="reveal mb-20">
-          <svg
-            viewBox="0 0 900 220"
+        <div class="reveal mb-20 relative border border-navy-700/50">
+          <Image
+            src={worldMap}
+            alt="World map showing Cisler Foods trade routes from Norway to Europe, and through Dubai to the Middle East, China and Japan"
+            widths={[768, 1280, 1920, 2752]}
             class="w-full h-auto"
-            role="img"
-            aria-label="Trade route diagram: Norway and Europe to Dubai headquarters, exporting to the Middle East, China and Japan"
+          />
+          <svg
+            viewBox="0 0 100 55.8"
+            preserveAspectRatio="none"
+            class="absolute inset-0 w-full h-full"
+            aria-hidden="true"
           >
-            <line
-              x1="90"
-              y1="110"
-              x2="430"
-              y2="110"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="45"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="110"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-            <line
-              x1="470"
-              y1="110"
-              x2="620"
-              y2="175"
-              stroke="#5F7C7D"
-              stroke-width="1"
-              stroke-dasharray="4 6"></line>
-
-            <circle cx="60" cy="110" r="5" fill="#f2ece0"></circle>
-            <text
-              x="60"
-              y="145"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">NORWAY</text
+            <g
+              fill="none"
+              stroke="#e6decb"
+              stroke-width="0.28"
+              stroke-dasharray="0.3 1.1"
+              stroke-linecap="round"
             >
-            <text
-              x="60"
-              y="163"
-              fill="#86988F"
-              font-size="11"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">& EUROPE</text
-            >
-
-            <circle cx="450" cy="110" r="7" fill="#f2ece0"></circle>
-            <text
-              x="450"
-              y="90"
-              fill="#f2ece0"
-              font-size="14"
-              letter-spacing="1.5"
-              text-anchor="middle"
-              font-family="IBM Plex Mono, monospace">DUBAI HQ</text
-            >
-
-            <circle cx="650" cy="45" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="49"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">MIDDLE EAST</text
-            >
-
-            <circle cx="650" cy="110" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="114"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">CHINA</text
-            >
-
-            <circle cx="650" cy="175" r="5" fill="#f2ece0"></circle>
-            <text
-              x="675"
-              y="179"
-              fill="#f2ece0"
-              font-size="13"
-              letter-spacing="1"
-              text-anchor="start"
-              font-family="IBM Plex Mono, monospace">JAPAN</text
-            >
+              <path d="M58.4,7.5 C57,11.5 56,14 54.8,16.2"></path>
+              <path d="M58.4,7.5 C61,14 63.5,21 65.8,27.2"></path>
+              <path d="M66.7,28 C71,24.8 74.8,23 78,22.7"></path>
+              <path d="M66.7,27.7 C73,21.5 79,20.6 84.9,21.1"></path>
+            </g>
+            <circle cx="58.4" cy="7.5" r="0.55" fill="#e6decb"></circle>
+            <circle
+              cx="58.4"
+              cy="7.5"
+              r="1.05"
+              fill="none"
+              stroke="#e6decb"
+              stroke-opacity="0.5"
+              stroke-width="0.14"></circle>
+            <rect
+              x="65.55"
+              y="27.65"
+              width="1.1"
+              height="1.1"
+              transform="rotate(45 66.1 28.2)"
+              fill="#b7b09a"></rect>
+            <circle cx="54.3" cy="17" r="0.45" fill="#e6decb"></circle>
+            <circle cx="78.6" cy="22.5" r="0.45" fill="#e6decb"></circle>
+            <circle cx="85.7" cy="21.3" r="0.45" fill="#e6decb"></circle>
           </svg>
+          <span class="map-label" style="left: 58.4%; top: 8.2%">Norway</span>
+          <span class="map-label map-label-hq" style="left: 66.1%; top: 54.5%"
+            >Dubai HQ</span
+          >
+          <span class="map-label" style="left: 54.3%; top: 33%">Europe</span>
+          <span class="map-label" style="left: 64.5%; top: 62.5%"
+            >Middle East</span
+          >
+          <span class="map-label" style="left: 78.6%; top: 44%">China</span>
+          <span class="map-label" style="left: 85.7%; top: 30%">Japan</span>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-px bg-navy-700/50 reveal">
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-700/50 reveal"
+        >
+          <div class="bg-navy-800 p-8">
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <h3 class="font-display text-xl mb-3">Europe</h3>
+            <p class="text-sm text-navy-200 leading-relaxed">
+              Norwegian seafood delivered across European markets, close to the
+              source and moving on the shortest cold chains we run.
+            </p>
+          </div>
           <div class="bg-navy-800 p-8">
             <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
             <h3 class="font-display text-xl mb-3">Middle East</h3>
@@ -864,8 +810,8 @@ const navLinks = [
               </h3>
               <p class="text-sm text-navy-600 leading-relaxed">
                 Headquartered in the UAE's trade gateway, positioned to serve
-                Middle Eastern, Chinese and Japanese markets with speed and
-                regulatory familiarity.
+                European, Middle Eastern, Chinese and Japanese markets with
+                speed and regulatory familiarity.
               </p>
             </div>
           </div>
@@ -1051,7 +997,7 @@ const navLinks = [
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-navy-700/50"
         >
-          <a href="#" class="block w-16">
+          <a href="#" class="block w-28">
             <Image src={logo} alt="Cisler Foods" class="w-full h-auto" />
           </a>
           <div class="flex flex-wrap gap-x-8 gap-y-3">

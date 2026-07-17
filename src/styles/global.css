@@ -78,11 +78,12 @@ html {
 }
 
 /* 1:1 recreation of the reference rope border: three double-rules,
-   two hatch rows leaning / then \, long/short dashes, khaki #b7b09a */
+   two hatch rows leaning / then \, long/short dashes. Color is the
+   reference khaki #b7b09a blended 50% toward navy-900 for softness. */
 .rope-border {
   background-origin: content-box;
   background-clip: content-box;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23b7b09a'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23b7b09a'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23667470'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23667470'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: auto 100%;
 }
@@ -90,6 +91,24 @@ html {
 .kicker {
   letter-spacing: 0.28em;
   text-transform: uppercase;
+}
+
+.map-label {
+  position: absolute;
+  transform: translate(-50%, 0);
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 1.1vw, 14px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e6decb;
+  text-shadow: 0 1px 6px rgba(10, 30, 38, 0.9);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.map-label-hq {
+  color: #d8ccb2;
+  font-weight: 500;
 }
 
 .tabular-figures {
