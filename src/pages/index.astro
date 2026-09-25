@@ -20,7 +20,7 @@ import langoustine from "../assets/images/langoustine.png";
 import scallops from "../assets/images/scallops.png";
 import halibut from "../assets/images/halibut.png";
 import herringWhole from "../assets/images/herring-whole.png";
-import herringSushi from "../assets/images/herring-sushi.png";
+import virginHerring from "../assets/images/virgin-herring.jpg";
 import bottargaLing from "../assets/images/bottarga-ling.png";
 import bottargaWolffish from "../assets/images/bottarga-wolffish.png";
 import worldMap from "../assets/images/world-map.png";
@@ -121,7 +121,7 @@ const products: Product[] = [
     forms: ["Frozen"],
     blurb:
       "Frozen to sushi-grade specification - a specialist cut for discerning kitchens.",
-    image: herringSushi,
+    image: virginHerring,
     icon: "lucide:fish",
   },
   {
@@ -238,10 +238,12 @@ const navLinks = [
       property="og:description"
       content="Norwegian seafood, sourced through exclusive producer agreements, traded end-to-end from our Dubai headquarters to Europe, the Middle East, China and Japan."
     />
-    <meta property="og:image" content="https://cislerfoods.ae/og-image.jpg" />
-    <meta property="og:url" content="https://cislerfoods.ae" />
+    <meta property="og:image" content="https://cislerfoods.com/og-image.jpg" />
+    <meta property="og:url" content="https://cislerfoods.com" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_AE" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://cislerfoods.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -249,6 +251,32 @@ const navLinks = [
       rel="stylesheet"
     />
     <title>Cisler Foods - Northern Seafood Trading House</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Cisler Foods",
+      url: "https://cislerfoods.com/",
+      logo: "https://cislerfoods.com/favicon.svg",
+      description:
+        "Dubai-based importer and distributor of Norwegian seafood for professional buyers across the UAE and international markets.",
+      email: "info@cislerfoods.ae",
+      telephone: "+971585615004",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "IFZA Business Park, Nadd Hessa, Dubai Silicon Oasis",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
+      },
+      areaServed: ["United Arab Emirates", "Europe", "China", "Japan"],
+      knowsAbout: [
+        "Norwegian seafood",
+        "Atlantic salmon",
+        "king crab",
+        "langoustine",
+        "cold-chain logistics",
+        "B2B seafood distribution",
+      ],
+    })} />
     {
       umamiId && (
         <script
@@ -256,13 +284,13 @@ const navLinks = [
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id={umamiId}
-          data-domains="cislerfoods.ae,www.cislerfoods.ae"
+          data-domains="cislerfoods.com,www.cislerfoods.com"
         />
       )
     }
   </head>
 
-  <body class="bg-paper-200 text-navy-900 font-body antialiased paper-texture">
+  <body class="bg-paper-200 text-cream font-body antialiased paper-texture">
     <!-- Navigation -->
     <nav
       class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-navy-950/60 to-navy-900/40 backdrop-blur-md border-b border-navy-700/20"
@@ -279,7 +307,7 @@ const navLinks = [
             navLinks.map((link) => (
               <a
                 href={link.href}
-                class="text-xs sm:text-sm kicker text-paper-200/80 hover:text-paper-100 transition-colors"
+                class="text-xs sm:text-sm kicker text-cream/70 hover:text-cream transition-colors"
               >
                 {link.label}
               </a>
@@ -288,13 +316,13 @@ const navLinks = [
         </div>
         <a
           href="#contact"
-          class="hidden md:inline-block border border-paper-100/40 text-paper-100 text-sm kicker px-5 py-2.5 hover:bg-paper-100 hover:text-navy-900 transition-colors"
+          class="hidden md:inline-block border border-cream/40 text-cream text-sm kicker px-5 py-2.5 hover:bg-cream hover:text-navy-900 transition-colors"
         >
           Request Quote
         </a>
         <button
           id="menu-toggle"
-          class="md:hidden text-paper-100"
+          class="md:hidden text-cream"
           aria-label="Toggle menu"
         >
           <Icon name="lucide:menu" class="w-7 h-7" id="menu-icon-open" />
@@ -309,13 +337,13 @@ const navLinks = [
           navLinks.map((link) => (
             <a
               href={link.href}
-              class="text-xs sm:text-sm kicker text-paper-200/80"
+              class="text-xs sm:text-sm kicker text-cream/70"
             >
               {link.label}
             </a>
           ))
         }
-        <a href="#contact" class="text-sm kicker text-paper-100 mt-2">
+        <a href="#contact" class="text-sm kicker text-cream mt-2">
           Request Quote →
         </a>
       </div>
@@ -323,7 +351,7 @@ const navLinks = [
 
     <!-- Hero -->
     <section
-      class="relative text-paper-100 pt-24 pb-16 sm:pt-32 md:pt-52 md:pb-36 overflow-hidden"
+      class="relative text-cream pt-24 pb-16 sm:pt-32 md:pt-52 md:pb-36 overflow-hidden"
     >
       <Image
         src={heroBackground}
@@ -336,6 +364,11 @@ const navLinks = [
         class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(95,124,125,0.22),transparent_55%)]"
       >
       </div>
+      <div
+        class="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-paper-200"
+        aria-hidden="true"
+      >
+      </div>
       <div class="relative max-w-5xl mx-auto px-6 text-center">
         <Image
           src={logo}
@@ -343,7 +376,7 @@ const navLinks = [
           class="w-56 sm:w-72 md:w-[30rem] mx-auto mb-12 animate-fade-up drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
         />
         <h1
-          class="kicker text-base md:text-2xl text-paper-100 mb-12 animate-fade-up"
+          class="font-display font-light kicker text-base md:text-2xl text-cream mb-12 animate-fade-up"
           style="animation-delay: 0.1s"
         >
           Purveyors of Northern Seafood to the Finest Markets
@@ -353,43 +386,31 @@ const navLinks = [
           style="animation-delay: 0.35s"
         >
           <RopeDivider class="hidden sm:block w-24 md:w-40 h-[14px]" />
-          <span class="kicker text-xs text-navy-300">Est. Trading House</span>
-          <RopeDivider class="hidden sm:block w-24 md:w-40 h-[14px]" />
-        </div>
-        <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
-          style="animation-delay: 0.4s"
-        >
           <a
             href="#products"
-            class="bg-paper-100 text-navy-900 kicker text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 hover:bg-white transition-colors"
+            class="bg-cream text-navy-900 kicker text-xs sm:text-sm font-bold px-6 sm:px-8 py-3 sm:py-4 hover:bg-white transition-colors"
           >
-            View Catalogue
+            Explore Catalogue
           </a>
-          <a
-            href="#contact"
-            class="border border-paper-100/40 text-paper-100 kicker text-sm px-8 py-4 hover:bg-paper-100/10 transition-colors"
-          >
-            Request a Quote
-          </a>
+          <RopeDivider class="hidden sm:block w-24 md:w-40 h-[14px]" />
         </div>
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- About / Heritage -->
     <section id="about" class="py-28 md:py-36 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <div class="reveal">
-            <p class="kicker text-sm text-navy-500 mb-5">The Trading House</p>
+            <p class="kicker text-sm text-cream/60 mb-5">The Trading House</p>
             <h2
               class="font-display text-3xl md:text-5xl font-light leading-tight mb-8"
             >
               From Northern fjords to global markets
             </h2>
-            <p class="text-navy-700 leading-relaxed mb-5">
+            <p class="text-cream/80 leading-relaxed mb-5">
               Cisler Foods began with a simple conviction: that the finest
               seafood in northern Europe deserves a more direct route to the
               tables that value it. From our headquarters in Dubai, we connect
@@ -398,7 +419,7 @@ const navLinks = [
               East, China and Japan - with no layer of intermediaries standing
               between the fjord and the customer.
             </p>
-            <p class="text-navy-700 leading-relaxed">
+            <p class="text-cream/80 leading-relaxed">
               That directness is not a slogan. It is an operating principle.
               Exclusive distribution agreements with Norwegian producers give us
               first call on quality and supply. End-to-end handling - from
@@ -406,18 +427,6 @@ const navLinks = [
               over condition and timing. The result is world-class northern
               seafood, priced by efficiency rather than markup.
             </p>
-            <div
-              class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-navy-900/15"
-            >
-              <div>
-                <p class="font-display text-3xl text-navy-900">18</p>
-                <p class="kicker text-xs text-navy-500 mt-1">Product Lines</p>
-              </div>
-              <div>
-                <p class="font-display text-3xl text-navy-900">4</p>
-                <p class="kicker text-xs text-navy-500 mt-1">Export Regions</p>
-              </div>
-            </div>
           </div>
           <div class="relative reveal" style="transition-delay: 0.15s">
             <Image
@@ -435,22 +444,23 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Products -->
     <section
       id="products"
-      class="py-28 md:py-36 bg-paper-100 paper-texture relative"
+      class="py-28 md:py-36 bg-paper-200 paper-texture relative"
     >
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mb-16 reveal">
-          <p class="kicker text-sm text-navy-500 mb-5">The Catalogue</p>
+          <p class="kicker text-sm text-cream/60 mb-5">The Catalogue</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
-            Eighteen Products from Northern Waters
+            Selected seafood from Norway's cold, clear waters - shaped by
+            northern seas, defined by origin
           </h2>
-          <p class="text-navy-700 leading-relaxed">
+          <p class="text-cream/80 leading-relaxed">
             Our catalogue is anchored in Norwegian waters and fjords, joined by
             a select line of specialties finished in our UAE facility - all
             handled under strict cold-chain discipline from harvest to export.
@@ -463,7 +473,7 @@ const navLinks = [
             filters.map((f) => (
               <button
                 data-filter={f.key}
-                class="filter-btn kicker text-xs px-5 py-2.5 border border-navy-900/20 text-navy-700 hover:border-navy-900 transition-colors"
+                class="filter-btn kicker text-xs px-5 py-2.5 border border-cream/25 text-cream/80 hover:border-cream transition-colors"
               >
                 {f.label}
               </button>
@@ -476,9 +486,9 @@ const navLinks = [
             products.map((p) => (
               <div
                 data-categories={p.categories.join(" ")}
-                class="product-card border border-navy-900/15 bg-paper-200/60 flex flex-col"
+                class="product-card group relative border border-cream/15 bg-paper-100 flex flex-col"
               >
-                <div class="aspect-[4/3] w-full overflow-hidden border-b border-navy-900/15 bg-navy-900/5 flex items-center justify-center">
+                <div class="relative aspect-[4/3] w-full overflow-hidden border-b border-cream/15 bg-navy-900/15 flex items-center justify-center">
                   {p.image ? (
                     <Image
                       src={p.image}
@@ -487,18 +497,27 @@ const navLinks = [
                       class="w-full h-full object-cover"
                     />
                   ) : (
-                    <div class="flex flex-col items-center gap-3 text-navy-400 px-6 text-center">
+                    <div class="flex flex-col items-center gap-3 text-cream/55 px-6 text-center">
                       <Icon name={p.icon} class="w-9 h-9" />
                       <span class="kicker text-[10px]">
                         Photography Pending
                       </span>
                     </div>
                   )}
+                  <div class="absolute inset-0 flex items-center justify-center bg-navy-950/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a
+                      href="#contact"
+                      data-product={p.name}
+                      class="request-quote-btn bg-cream text-navy-900 kicker text-xs px-5 py-2.5 hover:bg-white transition-colors"
+                    >
+                      Request Quote
+                    </a>
+                  </div>
                 </div>
                 <div class="p-6 flex flex-col flex-1">
                   <div class="flex flex-wrap gap-2 mb-3">
                     {p.categories.map((c) => (
-                      <span class="kicker text-[10px] border border-plum-500/40 text-plum-500 px-2 py-1">
+                      <span class="kicker text-[10px] border border-plum-400/50 text-plum-400 px-2 py-1">
                         {c === "fresh"
                           ? "Fresh"
                           : c === "frozen"
@@ -507,17 +526,17 @@ const navLinks = [
                       </span>
                     ))}
                   </div>
-                  <h3 class="font-display text-xl mb-2 text-navy-900">
+                  <h3 class="font-display text-xl mb-2 text-cream">
                     {p.name}
                   </h3>
-                  <p class="text-sm text-navy-600 leading-relaxed mb-4 flex-1">
+                  <p class="text-sm text-cream/75 leading-relaxed mb-4 flex-1">
                     {p.blurb}
                   </p>
-                  <div class="pt-4 border-t border-navy-900/10">
-                    <p class="kicker text-[10px] text-navy-400 mb-2">
+                  <div class="pt-4 border-t border-cream/15">
+                    <p class="kicker text-[10px] text-cream/55 mb-2">
                       Available As
                     </p>
-                    <p class="text-sm font-mono tabular-figures text-navy-700">
+                    <p class="text-sm font-mono tabular-figures text-cream/80">
                       {p.forms.join(" · ")}
                     </p>
                   </div>
@@ -529,7 +548,7 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Origin & Handling -->
     <section id="origin" class="py-28 md:py-36 relative">
@@ -547,13 +566,13 @@ const navLinks = [
             class="order-1 md:order-2 reveal"
             style="transition-delay: 0.15s"
           >
-            <p class="kicker text-sm text-navy-500 mb-5">Origin & Handling</p>
+            <p class="kicker text-sm text-cream/60 mb-5">Origin & Handling</p>
             <h2
               class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
             >
               Every Product, Traced to Norway
             </h2>
-            <p class="text-navy-700 leading-relaxed">
+            <p class="text-cream/80 leading-relaxed">
               All Cisler Foods product originates in Norwegian waters and fjords
               - wild-caught and farmed under some of the world's most tightly
               regulated fisheries. From the moment of harvest, product is
@@ -563,33 +582,33 @@ const navLinks = [
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-px bg-navy-900/15 reveal">
-          <div class="bg-paper-200 paper-texture p-8">
+        <div class="grid md:grid-cols-3 gap-px bg-cream/10 reveal">
+          <div class="bg-paper-100 paper-texture p-8">
             <Icon
               name="lucide:thermometer-snowflake"
-              class="w-7 h-7 text-navy-500 mb-5"
+              class="w-7 h-7 text-cream/60 mb-5"
             />
             <h3 class="font-display text-xl mb-3">Fresh</h3>
-            <p class="text-sm text-navy-600 leading-relaxed">
+            <p class="text-sm text-cream/75 leading-relaxed">
               Harvested and processed within hours, fresh product moves under
               continuous cold chain at 0–2°C, timed against flight schedules to
               reach Dubai and onward markets within 24–48 hours of leaving
               Norway.
             </p>
           </div>
-          <div class="bg-paper-200 paper-texture p-8">
-            <Icon name="lucide:snowflake" class="w-7 h-7 text-navy-500 mb-5" />
+          <div class="bg-paper-100 paper-texture p-8">
+            <Icon name="lucide:snowflake" class="w-7 h-7 text-cream/60 mb-5" />
             <h3 class="font-display text-xl mb-3">Frozen</h3>
-            <p class="text-sm text-navy-600 leading-relaxed">
+            <p class="text-sm text-cream/75 leading-relaxed">
               Product is blast-frozen at peak condition to lock in texture and
               flavour, then held at −18°C or below through storage, transit and
               delivery - a longer window without compromising quality.
             </p>
           </div>
-          <div class="bg-paper-200 paper-texture p-8">
-            <Icon name="lucide:waves" class="w-7 h-7 text-navy-500 mb-5" />
+          <div class="bg-paper-100 paper-texture p-8">
+            <Icon name="lucide:waves" class="w-7 h-7 text-cream/60 mb-5" />
             <h3 class="font-display text-xl mb-3">Live</h3>
-            <p class="text-sm text-navy-600 leading-relaxed">
+            <p class="text-sm text-cream/75 leading-relaxed">
               King crab, oysters, scallops and sea urchin are shipped live under
               controlled temperature and oxygen conditions, keeping product at
               its most valuable state until the point of sale.
@@ -597,15 +616,15 @@ const navLinks = [
           </div>
         </div>
 
-        <div class="mt-20 grid md:grid-cols-2 gap-16 items-start reveal">
-          <div>
-            <p class="kicker text-sm text-navy-500 mb-5">
-              Packaging & Logistics
-            </p>
-            <h3 class="font-display text-2xl mb-8">
-              Packed for the Destination Market
-            </h3>
-            <p class="text-navy-700 leading-relaxed mb-8">
+        <div class="mt-20 reveal">
+          <p class="kicker text-sm text-cream/60 mb-5">
+            Packaging & Logistics
+          </p>
+          <h3 class="font-display text-2xl mb-8">
+            Packed for the Destination Market
+          </h3>
+          <div class="grid md:grid-cols-2 gap-16 items-start">
+            <p class="text-cream/80 leading-relaxed">
               Every shipment is packed to the destination market's import
               requirements - insulated export cartons for fresh and live
               product, palletised frozen cartons for bulk orders, and full
@@ -617,36 +636,36 @@ const navLinks = [
               <div class="flex items-start gap-3">
                 <Icon
                   name="lucide:package"
-                  class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-1 shrink-0"
                 />
-                <p class="text-sm text-navy-700">
+                <p class="text-sm text-cream/80">
                   Insulated export cartons for fresh &amp; live shipments
                 </p>
               </div>
               <div class="flex items-start gap-3">
                 <Icon
                   name="lucide:layers"
-                  class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-1 shrink-0"
                 />
-                <p class="text-sm text-navy-700">
+                <p class="text-sm text-cream/80">
                   Palletised frozen cartons for bulk orders
                 </p>
               </div>
               <div class="flex items-start gap-3">
                 <Icon
                   name="lucide:file-check"
-                  class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-1 shrink-0"
                 />
-                <p class="text-sm text-navy-700">
+                <p class="text-sm text-cream/80">
                   Full labelling, weight &amp; origin documentation
                 </p>
               </div>
               <div class="flex items-start gap-3">
                 <Icon
                   name="lucide:thermometer"
-                  class="w-5 h-5 text-navy-500 mt-1 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-1 shrink-0"
                 />
-                <p class="text-sm text-navy-700">
+                <p class="text-sm text-cream/80">
                   Temperature logged from departure to arrival
                 </p>
               </div>
@@ -656,12 +675,12 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Export Markets -->
     <section
       id="markets"
-      class="py-28 md:py-36 text-paper-100 relative overflow-hidden"
+      class="py-28 md:py-36 text-cream relative overflow-hidden"
     >
       <Image
         src={fjordReflection}
@@ -670,15 +689,25 @@ const navLinks = [
         class="absolute inset-0 w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-navy-900/90"></div>
+      <div
+        class="absolute inset-x-0 top-0 h-32 md:h-48 bg-gradient-to-b from-paper-200 to-transparent"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-paper-200"
+        aria-hidden="true"
+      >
+      </div>
       <div class="max-w-7xl mx-auto px-6 relative">
         <div class="max-w-2xl mb-20 reveal">
-          <p class="kicker text-sm text-navy-400 mb-5">Where We Trade</p>
+          <p class="kicker text-sm text-cream/55 mb-5">Where We Trade</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
             Norway to the World, Through Dubai
           </h2>
-          <p class="text-navy-200 leading-relaxed">
+          <p class="text-cream/80 leading-relaxed">
             We source in Norway and northern Europe and trade through our Dubai
             headquarters - delivering to Europe, the Middle East, China and
             Japan.
@@ -706,9 +735,9 @@ const navLinks = [
               stroke-linecap="round"
             >
               <path d="M52.7,12.05 C51.5,15 50.8,17 49.9,18.4"></path>
-              <path d="M52.7,12.05 C56,17 60,23 62.6,27.2"></path>
-              <path d="M63.5,27.5 C68,25 73,23.5 77,22.8"></path>
-              <path d="M63.5,27.2 C72,22 79,20.5 85.1,20.3"></path>
+              <path d="M52.7,12.05 C56,17 60,23 62.6,25.2"></path>
+              <path d="M63.5,25.5 C68,25 73,23.5 77,22.8"></path>
+              <path d="M63.5,25.2 C72,22 79,20.5 85.1,20.3"></path>
             </g>
             <g
               fill="none"
@@ -718,9 +747,9 @@ const navLinks = [
               stroke-linecap="round"
             >
               <path d="M52.7,12.05 C51.5,15 50.8,17 49.9,18.4"></path>
-              <path d="M52.7,12.05 C56,17 60,23 62.6,27.2"></path>
-              <path d="M63.5,27.5 C68,25 73,23.5 77,22.8"></path>
-              <path d="M63.5,27.2 C72,22 79,20.5 85.1,20.3"></path>
+              <path d="M52.7,12.05 C56,17 60,23 62.6,25.2"></path>
+              <path d="M63.5,25.5 C68,25 73,23.5 77,22.8"></path>
+              <path d="M63.5,25.2 C72,22 79,20.5 85.1,20.3"></path>
             </g>
             <circle
               cx="52.7"
@@ -739,10 +768,10 @@ const navLinks = [
               stroke-width="0.14"></circle>
             <rect
               x="62.35"
-              y="27.15"
+              y="25.15"
               width="1.1"
               height="1.1"
-              transform="rotate(45 62.9 27.7)"
+              transform="rotate(45 62.9 25.7)"
               fill="#f8f4ec"
               stroke="#0a1e26"
               stroke-width="0.2"></rect>
@@ -769,11 +798,11 @@ const navLinks = [
               stroke-width="0.2"></circle>
           </svg>
           <span class="map-label" style="left: 52.7%; top: 15.5%">Norway</span>
-          <span class="map-label map-label-hq" style="left: 56%; top: 44%"
+          <span class="map-label map-label-hq" style="left: 62.9%; top: 50%"
             >Dubai HQ</span
           >
           <span class="map-label" style="left: 49.6%; top: 37%">Europe</span>
-          <span class="map-label" style="left: 48%; top: 38%">Middle East</span>
+          <span class="map-label" style="left: 60%; top: 42%">Middle East</span>
           <span class="map-label" style="left: 77.6%; top: 44%">China</span>
           <span class="map-label" style="left: 85.9%; top: 30%">Japan</span>
         </div>
@@ -782,33 +811,33 @@ const navLinks = [
           class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-700/50 reveal"
         >
           <div class="bg-navy-800 p-8">
-            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-cream/70 mb-4" />
             <h3 class="font-display text-xl mb-3">Europe</h3>
-            <p class="text-sm text-navy-200 leading-relaxed">
+            <p class="text-sm text-cream/80 leading-relaxed">
               Norwegian seafood delivered across European markets, close to the
               source and moving on the shortest cold chains we run.
             </p>
           </div>
           <div class="bg-navy-800 p-8">
-            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-cream/70 mb-4" />
             <h3 class="font-display text-xl mb-3">Middle East</h3>
-            <p class="text-sm text-navy-200 leading-relaxed">
+            <p class="text-sm text-cream/80 leading-relaxed">
               Full regional coverage across the Middle East, served directly
               from our Dubai headquarters.
             </p>
           </div>
           <div class="bg-navy-800 p-8">
-            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-cream/70 mb-4" />
             <h3 class="font-display text-xl mb-3">China</h3>
-            <p class="text-sm text-navy-200 leading-relaxed">
+            <p class="text-sm text-cream/80 leading-relaxed">
               Direct import channels bringing premium northern seafood to
               Chinese distributors and retailers.
             </p>
           </div>
           <div class="bg-navy-800 p-8">
-            <Icon name="lucide:map-pin" class="w-6 h-6 text-navy-300 mb-4" />
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-cream/70 mb-4" />
             <h3 class="font-display text-xl mb-3">Japan</h3>
-            <p class="text-sm text-navy-200 leading-relaxed">
+            <p class="text-sm text-cream/80 leading-relaxed">
               Specification-grade product supplied to one of the world's most
               demanding seafood markets.
             </p>
@@ -817,13 +846,13 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Quality & Credibility -->
     <section class="py-28 md:py-36 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mb-16 reveal">
-          <p class="kicker text-sm text-navy-500 mb-5">Why Cisler Foods</p>
+          <p class="kicker text-sm text-cream/60 mb-5">Why Cisler Foods</p>
           <h2
             class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
           >
@@ -834,11 +863,11 @@ const navLinks = [
           <div class="flex gap-5">
             <Icon
               name="lucide:handshake"
-              class="w-7 h-7 text-navy-500 shrink-0"
+              class="w-7 h-7 text-cream/60 shrink-0"
             />
             <div>
               <h3 class="font-display text-xl mb-2">Exclusive Distribution</h3>
-              <p class="text-sm text-navy-600 leading-relaxed">
+              <p class="text-sm text-cream/75 leading-relaxed">
                 Multiple exclusive distribution agreements with Norwegian
                 producers and fisheries give us direct, reliable access to
                 volume and quality other traders compete for.
@@ -846,10 +875,10 @@ const navLinks = [
             </div>
           </div>
           <div class="flex gap-5">
-            <Icon name="lucide:route" class="w-7 h-7 text-navy-500 shrink-0" />
+            <Icon name="lucide:route" class="w-7 h-7 text-cream/60 shrink-0" />
             <div>
               <h3 class="font-display text-xl mb-2">No Intermediaries</h3>
-              <p class="text-sm text-navy-600 leading-relaxed">
+              <p class="text-sm text-cream/75 leading-relaxed">
                 End-to-end distribution from harvest to final delivery removes
                 layers of markup - competitive pricing without compromising on
                 origin or handling standards.
@@ -859,11 +888,11 @@ const navLinks = [
           <div class="flex gap-5">
             <Icon
               name="lucide:file-check"
-              class="w-7 h-7 text-navy-500 shrink-0"
+              class="w-7 h-7 text-cream/60 shrink-0"
             />
             <div>
               <h3 class="font-display text-xl mb-2">Full Traceability</h3>
-              <p class="text-sm text-navy-600 leading-relaxed">
+              <p class="text-sm text-cream/75 leading-relaxed">
                 Every consignment is documented from vessel or farm through
                 export - origin, catch date and handling records available to
                 buyers on request.
@@ -873,13 +902,13 @@ const navLinks = [
           <div class="flex gap-5">
             <Icon
               name="lucide:building-2"
-              class="w-7 h-7 text-navy-500 shrink-0"
+              class="w-7 h-7 text-cream/60 shrink-0"
             />
             <div>
               <h3 class="font-display text-xl mb-2">
                 Dubai-Based, Globally Positioned
               </h3>
-              <p class="text-sm text-navy-600 leading-relaxed">
+              <p class="text-sm text-cream/75 leading-relaxed">
                 Headquartered in the UAE's trade gateway, positioned to serve
                 European, Middle Eastern, Chinese and Japanese markets with
                 speed and regulatory familiarity.
@@ -890,36 +919,36 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Contact / RFQ -->
     <section
       id="contact"
-      class="py-28 md:py-36 bg-paper-100 paper-texture relative"
+      class="py-28 md:py-36 bg-paper-200 paper-texture relative"
     >
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-5 gap-16">
           <div class="lg:col-span-2 reveal">
-            <p class="kicker text-sm text-navy-500 mb-5">Request a Quote</p>
+            <p class="kicker text-sm text-cream/60 mb-5">Request a Quote</p>
             <h2
               class="font-display text-3xl md:text-4xl font-light leading-tight mb-8"
             >
-              Start a Conversation With Our Trade Desk
+              Start a Conversation
             </h2>
-            <p class="text-navy-700 leading-relaxed mb-10">
-              Tell us what you're looking to source and in what volume. Our
-              trade desk will respond with availability, specification and
-              pricing.
+            <p class="text-cream/80 leading-relaxed mb-10">
+              Tell us what you are looking for, and we will take it from there.
+              Share a product, a volume or simply an idea - we will come back
+              to you personally with availability, specifications and pricing.
             </p>
-            <div class="space-y-6 border-t border-navy-900/15 pt-8">
+            <div class="space-y-6 border-t border-cream/15 pt-8">
               <div class="flex items-start gap-4">
                 <Icon
                   name="lucide:mail"
-                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-0.5 shrink-0"
                 />
                 <div>
-                  <p class="kicker text-[10px] text-navy-400 mb-1">Email</p>
-                  <a href="mailto:info@cislerfoods.ae" class="text-navy-900"
+                  <p class="kicker text-[10px] text-cream/55 mb-1">Email</p>
+                  <a href="mailto:info@cislerfoods.ae" class="text-cream"
                     >info@cislerfoods.ae</a
                   >
                 </div>
@@ -927,11 +956,11 @@ const navLinks = [
               <div class="flex items-start gap-4">
                 <Icon
                   name="lucide:phone"
-                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-0.5 shrink-0"
                 />
                 <div>
-                  <p class="kicker text-[10px] text-navy-400 mb-1">Phone</p>
-                  <a href="tel:+971585615004" class="text-navy-900"
+                  <p class="kicker text-[10px] text-cream/55 mb-1">Phone</p>
+                  <a href="tel:+971585615004" class="text-cream"
                     >+971 58 561 5004</a
                   >
                 </div>
@@ -939,13 +968,13 @@ const navLinks = [
               <div class="flex items-start gap-4">
                 <Icon
                   name="lucide:building-2"
-                  class="w-5 h-5 text-navy-500 mt-0.5 shrink-0"
+                  class="w-5 h-5 text-cream/60 mt-0.5 shrink-0"
                 />
                 <div>
-                  <p class="kicker text-[10px] text-navy-400 mb-1">
+                  <p class="kicker text-[10px] text-cream/55 mb-1">
                     Headquarters
                   </p>
-                  <p class="text-navy-900">
+                  <p class="text-cream">
                     IFZA Business Park<br />Nadd Hessa, Dubai Silicon Oasis<br
                     />Dubai, United Arab Emirates
                   </p>
@@ -957,13 +986,13 @@ const navLinks = [
           <div class="lg:col-span-3 reveal" style="transition-delay: 0.15s">
             <form
               id="rfq-form"
-              class="border border-navy-900/15 bg-paper-200/60 p-8 md:p-10 space-y-6"
+              class="border border-cream/15 bg-paper-100 p-8 md:p-10 space-y-6"
             >
               <div class="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label
                     for="name"
-                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    class="kicker text-[11px] text-cream/60 block mb-2"
                     >Full Name</label
                   >
                   <input
@@ -971,13 +1000,13 @@ const navLinks = [
                     name="name"
                     type="text"
                     required
-                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                    class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                   />
                 </div>
                 <div>
                   <label
                     for="company"
-                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    class="kicker text-[11px] text-cream/60 block mb-2"
                     >Company</label
                   >
                   <input
@@ -985,13 +1014,13 @@ const navLinks = [
                     name="company"
                     type="text"
                     required
-                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                    class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                   />
                 </div>
                 <div>
                   <label
                     for="email"
-                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    class="kicker text-[11px] text-cream/60 block mb-2"
                     >Email</label
                   >
                   <input
@@ -999,13 +1028,13 @@ const navLinks = [
                     name="email"
                     type="email"
                     required
-                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                    class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                   />
                 </div>
                 <div>
                   <label
                     for="country"
-                    class="kicker text-[11px] text-navy-500 block mb-2"
+                    class="kicker text-[11px] text-cream/60 block mb-2"
                     >Country</label
                   >
                   <input
@@ -1013,14 +1042,14 @@ const navLinks = [
                     name="country"
                     type="text"
                     required
-                    class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                    class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                   />
                 </div>
               </div>
               <div>
                 <label
                   for="products"
-                  class="kicker text-[11px] text-navy-500 block mb-2"
+                  class="kicker text-[11px] text-cream/60 block mb-2"
                   >Product(s) of Interest</label
                 >
                 <input
@@ -1028,29 +1057,29 @@ const navLinks = [
                   name="products"
                   type="text"
                   placeholder="e.g. Atlantic Salmon, King Crab, Langoustine"
-                  class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                 />
               </div>
               <div>
                 <label
                   for="message"
-                  class="kicker text-[11px] text-navy-500 block mb-2"
+                  class="kicker text-[11px] text-cream/60 block mb-2"
                   >Message / Estimated Volume</label
                 >
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
-                  class="w-full bg-paper-100 border border-navy-900/20 px-4 py-3 text-navy-900 focus:outline-none focus:border-navy-700"
+                  class="w-full bg-paper-200 border border-cream/25 px-4 py-3 text-cream focus:outline-none focus:border-cream"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="bg-navy-900 text-paper-100 kicker text-sm px-8 py-4 hover:bg-navy-800 transition-colors"
+                class="bg-cream text-navy-900 kicker text-sm px-8 py-4 hover:bg-white transition-colors"
               >
                 Send Inquiry
               </button>
-              <p class="text-xs text-navy-500">
+              <p class="text-xs text-cream/60">
                 Submitting opens your email client, addressed to
                 info@cislerfoods.ae, with your details pre-filled.
               </p>
@@ -1060,11 +1089,34 @@ const navLinks = [
       </div>
     </section>
 
-    <RopeDivider class="h-[44px] bg-navy-900 py-[9px]" />
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
+
+    <!-- Search context -->
+    <section aria-labelledby="search-context-title" class="py-20 md:py-24">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <p class="kicker text-sm text-cream/60 mb-5">From Norway to Dubai</p>
+        <h2
+          id="search-context-title"
+          class="font-display text-3xl md:text-5xl font-light leading-tight mb-6"
+        >
+          Norwegian Seafood Importer &amp; Distributor in Dubai
+        </h2>
+        <p class="text-cream/80 leading-relaxed">
+          Cisler Foods is a Dubai-based seafood trading company supplying
+          premium Norwegian salmon, king crab, langoustine, trout, cod,
+          shellfish and specialty seafood to professional buyers across the
+          UAE and international markets. We manage sourcing, import logistics,
+          cold-chain handling and distribution for restaurants, hotels,
+          retailers, wholesalers and foodservice partners.
+        </p>
+      </div>
+    </section>
+
+    <RopeDivider class="h-[44px] py-[9px] opacity-90" />
 
     <!-- Footer -->
     <footer
-      class="relative bg-gradient-to-b from-navy-900/85 to-navy-950/95 backdrop-blur-sm text-navy-300 py-16"
+      class="relative bg-gradient-to-b from-navy-900/85 to-navy-950/95 backdrop-blur-sm text-cream/70 py-16"
     >
       <div class="max-w-7xl mx-auto px-6">
         <div
@@ -1078,7 +1130,7 @@ const navLinks = [
               navLinks.map((link) => (
                 <a
                   href={link.href}
-                  class="text-sm kicker text-navy-300 hover:text-paper-100 transition-colors"
+                  class="text-sm kicker text-cream/70 hover:text-cream transition-colors"
                 >
                   {link.label}
                 </a>
@@ -1089,8 +1141,8 @@ const navLinks = [
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8"
         >
-          <p class="text-sm text-navy-400">Cisler Foods DMCC · Dubai, UAE</p>
-          <p class="text-sm text-navy-500">
+          <p class="text-sm text-cream/55">Cisler Foods DMCC · Dubai, UAE</p>
+          <p class="text-sm text-cream/60">
             &copy; {new Date().getFullYear()} Cisler Foods. All rights reserved.
           </p>
         </div>
@@ -1119,9 +1171,9 @@ const navLinks = [
       const setActiveFilter = (key: string) => {
         filterButtons.forEach((btn) => {
           const active = btn.dataset.filter === key;
-          btn.classList.toggle("bg-navy-900", active);
-          btn.classList.toggle("text-paper-100", active);
-          btn.classList.toggle("border-navy-900", active);
+          btn.classList.toggle("bg-cream", active);
+          btn.classList.toggle("text-navy-900", active);
+          btn.classList.toggle("border-cream", active);
         });
         productCards.forEach((card) => {
           const categories = card.dataset.categories?.split(" ") ?? [];
@@ -1136,6 +1188,17 @@ const navLinks = [
         );
       });
       setActiveFilter("all");
+
+      document
+        .querySelectorAll<HTMLAnchorElement>(".request-quote-btn")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const productsInput = document.getElementById(
+              "products",
+            ) as HTMLInputElement | null;
+            if (productsInput) productsInput.value = btn.dataset.product ?? "";
+          });
+        });
 
       const rfqForm = document.getElementById(
         "rfq-form",

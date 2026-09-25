@@ -5,7 +5,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cislerfoods.ae",
+  site: "https://cislerfoods.com",
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],

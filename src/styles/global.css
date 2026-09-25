@@ -17,11 +17,15 @@
   --color-navy-200: #bcc6bc;
   --color-navy-100: #d8ddd4;
 
-  /* Paper — the catalog surface, never stark white, dimmed for the eye */
-  --color-paper-100: #ece5d4;
-  --color-paper-200: #e6decb;
-  --color-paper-300: #dbd0b8;
-  --color-paper-400: #cabd9f;
+  /* Paper — dark harbor-blue surfaces. 200 is the base site tint, 100 is a
+     softened, slightly lighter tone used for boxed content (cards, panels, forms). */
+  --color-paper-100: #3a6478;
+  --color-paper-200: #17364a;
+  --color-paper-300: #142d3a;
+  --color-paper-400: #0d1f28;
+
+  /* Cream — the site's one contrast colour for text against the dark blue */
+  --color-cream: #f3ecd9;
 
   /* Category-tag accent only — never a dominant color */
   --color-plum-400: #8a7391;
@@ -62,29 +66,44 @@ html {
 
 .paper-texture {
   background-image:
+    radial-gradient(circle at 6% 6%, rgba(9, 20, 26, 0.3) 0, transparent 40%),
     radial-gradient(
-      circle at 15% 20%,
-      rgba(21, 56, 71, 0.07) 0,
-      transparent 50%
+      circle at 94% 8%,
+      rgba(9, 20, 26, 0.24) 0,
+      transparent 38%
     ),
     radial-gradient(
-      circle at 85% 75%,
-      rgba(21, 56, 71, 0.065) 0,
-      transparent 55%
+      circle at 8% 94%,
+      rgba(9, 20, 26, 0.24) 0,
+      transparent 38%
     ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.85' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='2.4' intercept='-0.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.17'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='0.08'/%3E%3C/svg%3E");
+    radial-gradient(
+      circle at 94% 94%,
+      rgba(9, 20, 26, 0.3) 0,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 35% 55%,
+      rgba(92, 66, 34, 0.035) 0,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 68% 20%,
+      rgba(92, 66, 34, 0.03) 0,
+      transparent 26%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.85' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.7' intercept='-0.18'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.14' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='0.08'/%3E%3C/svg%3E");
   background-attachment: fixed;
 }
 
 /* 1:1 recreation of the reference rope border: three double-rules,
-   two hatch rows leaning / then \, long/short dashes. Color is the
-   reference khaki #b7b09a blended 50% toward navy-900 for softness.
-   50% more transparent for softer visual presence. */
+   two hatch rows leaning / then \, long/short dashes. Full opacity for a
+   crisp, sharp-edged line against the dark surfaces. */
 .rope-border {
   background-origin: content-box;
   background-clip: content-box;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%23667470' opacity='0.5'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%23667470' opacity='0.5'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='52'%3E%3Cg fill='%237c8d85'%3E%3Crect y='0' width='38' height='2.5'/%3E%3Crect y='8' width='38' height='2.5'/%3E%3Crect y='21.5' width='38' height='2.5'/%3E%3Crect y='29.5' width='38' height='2.5'/%3E%3Crect y='41.5' width='38' height='2.5'/%3E%3Crect y='49.5' width='38' height='2.5'/%3E%3C/g%3E%3Cg stroke='%237c8d85'%3E%3Cline x1='14' y1='12' x2='8' y2='20' stroke-width='4.5'/%3E%3Cline x1='33' y1='12' x2='27' y2='20' stroke-width='2'/%3E%3Cline x1='8' y1='32' x2='14' y2='40' stroke-width='4.5'/%3E%3Cline x1='27' y1='32' x2='33' y2='40' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: auto 100%;
 }
